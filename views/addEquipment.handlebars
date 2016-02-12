@@ -19,10 +19,6 @@
 		.whiteicon {color:white;}
 	</style>
 
-	<script type="text/javascript">
-    function updateTextInput(val) {
-      document.getElementById('displaypoints').value=val; 
-    }
   </script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -48,8 +44,8 @@
 	      <ul class="nav navbar-nav">
 	        <li ><a href="/">Home</a></li>
 	        <li><a href="#">Sound Test</a></li>
-	        <li class="active"><a href="#">My Environments</a></li>
-	        <li ><a href="/equipment">My Equipment</a></li>
+	        <li ><a href="#">My Environments</a></li>
+	        <li class="active"><a href="/equipment">My Equipment</a></li>
 	        <li><a href="#">Community</a></li>
 	        <li><a href="#">About Us</a></li>
 	      </ul>
@@ -61,14 +57,14 @@
 	  </div>
 	</nav>
 	<div class = "container">
-		<a href="/environment">
+		<a href="/equipment">
 			<div class="row row-bottom-margin" style = "margin-bottom: 0px;margin-top:3%; background-color: #151515;
 				  background-size: 100% auto ;
 				  padding-bottom: 0px;">
 		    <div class="col-xs-8" style = "max-height: 125px">
 		      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
 		        <i class="fa fa-arrow-left fa-2x whiteicon"></i>
-		        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> BACK TO ENVIRONMENTS
+		        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> BACK TO EQUIPMENT
 		         <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">Going Back </p></span>
 		       
 		      
@@ -82,46 +78,44 @@
 				  padding-bottom: 0px;">
 		    <div class="" style = "">
 		      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
-		        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> NEW ENVIRONMENTS<br>
+		        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> NEW EQUIPMENT<br>
 		        </span>
 		        <br>
 	        
-			      <form style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:left; font-size: 25px; color: #ffffff; font-family: Verdana" id="addingEnv" action="/addingEnv">
-		      	
-				    	<label style="width:auto;" for="name"> Name of Environment </label>
-				    	<textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name"></textarea>
-			    	
-			    		<br>
-			    		<label for="equip">Select Gear</label>
-				    	<select name="equip" id="equip" data-native-menu="false">
-				    		<option value="" disabled selected>Select your option</option>
-				    		{{#each equipment}}
-			          		<option value={{name}}>{{name}}</option>
-								{{/each}}
-				        </select>
-				      
-				      	<br>
-			      
-				      	<label for="points">NOISE LEVEL</label>
-				      	<i class="fa fa-volume-down"></i>
-				      	<input style="width:68%" type="range" name="points" id="points" value="50" min="0" max="100" data-highlight="true" onchange="updateTextInput(this.value);">
-				      	<i class="fa fa-volume-up"></i>
-				      	<input style="width:5%" type="text" id="displaypoints" value="">
-				      	<br>
-				    	<label style="width:auto;" for="place"> Type of Place </label>
-				    	<select id="place" name="place">
-				    		<option value="home">Home</option>
-				    		<option value="bus">Bus</option>
-				    		<option value="university">University</option>
-				    	</select>
-				    	<br>
-				    	
-				    	
-						<input type="submit" class="btn btn-default"  value="ADD ENVIRONMENT">
+		      <form style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:left; font-size: 25px; color: #ffffff; font-family: Verdana" id="addingEquip" action="/addingEquip">
+	      	
+			    	<label style="width:auto;" for="name"> Name of Equipment </label>
+			    	<textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name"></textarea>
+		    	
+		    		<br>
+		    		<span>
+		    			<label for="type"> Type of Equipment </label>
+		    			<select name="type" id="type" data-native-menu="false">
+  							<option value="" disabled selected>Select your option</option>
+  							<option value="open-end"> open-end</option>
+  							<option value="closed-end"> closed-end</option>
+  							<option value="in-ear"> in-ear</option>
+  							<option value="Bluetooth-speaker"> Bluetooth-speaker</option>
+  							<option value="soundsystem"> soundsystem</option>
+  							<option value="pc speakers"> pc speakers</option>
+						</select>
+		    		</span>	
+		      		
+					
+		      		<br>
 
-				  	</form>
-		      	
-		      </div>
+		      		<span>
+			    		<label for="usage"> Usage </label>
+				    	<select name="usage" id="usage" data-native-menu="false">
+				    		<option value="" disabled selected>Select your option</option>
+				    		<option value="gaming"> Gaming</option>
+				    		<option value="music"> Music</option>
+				    		<option value="gaming/music"> Gaming/Music</option>
+			        	</select>
+
+			  		</span><br>
+		      		<input type="submit" class="btn btn-default"  value="ADD EQUIPMENT">
+		      	</form>
 		      
 		    </div>
 			    
