@@ -23,10 +23,11 @@ SOFTWARE.
 */
 
 'use strict';
-
+console.log("hello");
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+    console.log("Initialized page");
 })
 
 /*
@@ -34,6 +35,7 @@ $(document).ready(function() {
  */
 function initializePage() {
     $('#sound-test').click(soundTest);
+    console.log("Applied click function");
 }
 var audioContext = null;
 var meter = null;
@@ -42,21 +44,26 @@ var WIDTH=500;
 var HEIGHT=50;
 var rafID = null;
 var testingSound = false;
+var mediaStreamSource = null;
 function soundTest() {
+    console.log("Clicked sound test button");
     if (testingSound == true) {
         meter.shutdown();
-        $("sound-test").html("Test Noise Level");
+        $("#meter-div").hide();
+        $("#sound-test").html("Test Noise Level");
+        testingSound = false;
     } else {
         testingSound = true;
-        $("sound-test").html("Stop Test");
+        $("#sound-test").html("Stop Test");
+        $("#meter-div").show();
         // grab our canvas
-        canvasContext =$("#meter").getContext("2d");
+        canvasContext =$("#meter")[0].getContext("2d");
         
         // monkeypatch Web Audio
         window.AudioContext = window.AudioContext || window.webkitAudioContext;
         
         // grab an audio context
-        audioContext = new AudioContext();
+        audioContext = audioContext || new AudioContext();
 
         // Attempt to get audio input
         try {
@@ -67,6 +74,7 @@ function soundTest() {
                 navigator.mozGetUserMedia;
 
             // ask for an audio input
+            
             navigator.getUserMedia(
             {
                 "audio": {
