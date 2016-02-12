@@ -1,5 +1,5 @@
 // Get all of our friend data
-var data = require('../environment.json');
+var data = require('../data.json');
 
 exports.view = function(req, res){
 	console.log(data);
