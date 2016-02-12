@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+        <title>Sound Test</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <script src="/js/jquery-1.11.0.js" type="text/javascript"></script>
+        <script src="/js/bootstrap.js" type="text/javascript"></script>
+        <script src="/js/hci-friends.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="css/hci-friends.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+	</head>	
+	<body>
+        <nav class="navbar navbar-inverse" style = "background-image: linear-gradient(to bottom, #3f3f3f 100%, #3f3f3f 100%); margin-bottom: 0px">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" style = "font-family: Arial" href="#">Sound Test</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/index">Home</a></li>
+                <li class="active"><a href="#">Sound Test</a></li>
+                <li><a href="/environment">My Environments</a></li>
+                <li><a href="/equipment">My Equipment</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+            </div>
+        </div>
+        </nav>
+		
+		<div class="container">
+            <div style="padding-top: 20%;">
+                <i class="fa fa-volume-up fa-5x"></i>
+                <button type="button" class="btn btn-primary btn-lg" id="sound-test">Test Noise Level</button>
+            </div>
+            <div id="meter-div" hidden="hidden">
+                <canvas id="meter" width="500" height="50"></canvas>
+                <img style="width:5em" src="https://cdn1.iconfinder.com/data/icons/computer-hardware-4/512/audio_speakers-2-512.png"></img>
+                <i class="fa fa-headphones fa-5x"></i>     
+            </div>
+         </div>
+	</body>	
+</html>
