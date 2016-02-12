@@ -11,8 +11,10 @@ var handlebars = require('express3-handlebars')
 var index = require('./routes/index');
 var about = require('./routes/about');
 var soundtest = require('./routes/soundtest');
+var addEnvironment = require('./routes/addEnvironment');
 var equipment = require('./routes/equipment');
 var environment = require('./routes/environment');
+var addingEnv=require('./routes/addingEnv');
 // Example route
 // var user = require('./routes/user');
 
@@ -44,6 +46,8 @@ app.get('/equipment', equipment.view);
 app.get('/about', about.view);
 app.get('/environment', environment.view);
 app.get('/soundtest', soundtest.view);
+app.get('/addEnv', addEnvironment.addEnv);
+app.get('/addingEnv',addingEnv.addEnv);
 // Example route
 // app.get('/users', user.list);
 

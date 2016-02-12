@@ -1,34 +1,72 @@
 {
-	"friends": [
+	"environment": [
 		{
-			"name": "Doug Engelbart",
-			"description": "Has awesome pet mice",
-			"imageURL": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Douglas_Engelbart_in_2008.jpg/972px-Douglas_Engelbart_in_2008.jpg"			
+			"name": "Home",
+			"equipment": "Senheiser2",
+			"noise": "quiet",
+			"type": "home"			
 		},
 		{
-			"name": "Ivan Sutherland",
-			"description": "Great at sketching",
-			"imageURL": "http://upload.wikimedia.org/wikipedia/commons/5/5c/Ivan_Sutherland_at_CHM.jpg"			
+			"name": "Bus",
+			"equipment": "Apple Earpods",
+			"noise": "loud",
+			"type": "bus"
 		},
 		{
-			"name": "Lucy Suchman",
-			"description": "Loves Trukese navigators",
-			"imageURL": "http://upload.wikimedia.org/wikipedia/commons/d/df/Lucy_Suchman.jpeg"			
+			"name": "Work",
+			"equipment": "PDX-510",
+			"noise": "medium",
+			"type": "building"	
 		},
 		{
-			"name": "Vannevar Bush",
-			"description": "Has stellar associative memory",
-			"imageURL": "http://upload.wikimedia.org/wikipedia/commons/e/ea/Vannevar_Bush_portrait.jpg"			
+			"name": "Room",
+			"equipment": "HHX - 2100",
+			"noise": "quiet",
+			"type": "home"	
 		},
 		{
-			"name": "Grace Hopper",
-			"description": "Only friend with a Navy ship named after them",
-			"imageURL": "http://www.personal.psu.edu/djd5202/gHop.jpg"
+			"name": "Dorm",
+			"equipment": "PDX-510",
+			"noise": "medium",
+			"type": "home"	
 		},
 		{
-			"name": "Allen Newell",
-			"description": "Really into psychology",
-			"imageURL": "http://www.nap.edu/html/biomems/photo/anewell.JPG"
+			"name": "Campus",
+			"equipment": "QHX-222",
+			"noise": "loud",
+			"type": "university"
+		}
+	],
+	"equipment": [
+		{
+			"name": "PDX-250",
+			"type": "open-end headphones",
+			"usage": "gaming/music"			
+		},
+		{
+			"name": "Senheiser 2",
+			"type": "closed-end headphones",
+			"usage": "music"	
+		},
+		{
+			"name": "HX - 200",
+			"type": "open-end headphones",
+			"usage": "gaming/music"	
+		},
+		{
+			"name": "Apple Earpods",
+			"type": "in-ear earphones",
+			"usage": "music"	
+		},
+		{
+			"name": "HD-250",
+			"type": "open-end headphones",
+			"usage": "gaming/music"	
+		},
+		{
+			"name": "DPS-2510",
+			"type": "open-end headphones",
+			"usage": "gaming/music"	
 		}
 	]
 }
