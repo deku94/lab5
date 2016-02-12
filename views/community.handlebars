@@ -46,15 +46,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" style = "font-family: Arial" href="#">My Equipment</a>
+      <a class="navbar-brand" style = "font-family: Arial" href="#">Community</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li ><a href="/">Home</a></li>
         <li><a href="/equipment">Sound Test</a></li>
         <li><a href="/environment">My Environments</a></li>
-        <li class="active"><a href="#">My Equipment</a></li>
-        <li><a href="/community">Community</a></li>
+        <li ><a href="/equipment">My Equipment</a></li>
+        <li class ="active"><a href="#">Community</a></li>
         <li><a href="/about">About Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -65,37 +65,34 @@
   </div>
 </nav>
 <div class = "container" >
-<a href="/toAddEquipment">
-  <div class="row row-bottom-margin" style = "margin-bottom: 0px;margin-top:3%; background-color: #151515;
-  background-size: 100% auto ;
-  padding-bottom: 0px;">
-    <div class="col-xs-8" style = "max-height: 125px">
-      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
-        <i class="fa fa-plus fa-2x whiteicon"></i>
-        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> ADD EQUIPMENT
-         <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">add New EQUIPMENT </p></span>
-       
-      
-      </div>
-    </div>
-  </div>
-</a>  
+
 		
-{{#each equipment}}
 <div class="row row-bottom-margin" style = "margin-bottom: 0px; background-color: #151515;
 background-size: 100% auto ;
 padding-bottom: 0px;">
-        <div class="col-xs-8" style = "max-height: 125px">
-    <div style = "padding-top: 2%; padding-bottom: 15%" >
-      <i class="fa fa-plug fa-2x whiteicon"></i>
-      <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> {{name}}
-       <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">{{type}} - {{usage}} </p></span>
+        <div class="col-xs-12" style = "max-height: 125px">
+    <div style = "padding-top: 5%; padding-bottom: 15%" >
+      <i class="fa fa-desktop fa-2x whiteicon"></i>
+      <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> Head-Fi
+       <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">website for forums, buying guides, and reviews for audio equipment</p></span>
      
     
     </div>
   </div>
 </div>
-{{/each}}
+<div class="row row-bottom-margin" style = "margin-bottom: 0px; background-color: #151515;
+background-size: 100% auto ;
+padding-bottom: 0px;">
+        <div class="col-xs-12" style = "max-height: 125px">
+    <div style = "padding-top: 5%; padding-bottom: 15%" >
+      <i class="fa fa-desktop fa-2x whiteicon"></i>
+      <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> CNET
+       <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">reviews on the newest aduio equipment</p></span>
+     
+    
+    </div>
+  </div>
+</div>
 	
 	
 </div>
