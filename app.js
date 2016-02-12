@@ -16,6 +16,7 @@ var equipment = require('./routes/equipment');
 var environment = require('./routes/environment');
 var addingEnv=require('./routes/addingEnv');
 var toAddEquipment=require('./routes/toAddEquipment');
+var addingEquip=require('./routes/addingEquip');
 // Example route
 // var user = require('./routes/user');
 
@@ -50,6 +51,7 @@ app.get('/soundtest', soundtest.view);
 app.get('/addEnv', addEnvironment.addEnv);
 app.get('/addingEnv',addingEnv.addEnv);
 app.get('/toAddEquipment',toAddEquipment.addEquipment);
+app.get('/addingEquip',addingEquip.addingEquip);
 // Example route
 // app.get('/users', user.list);
 

@@ -19,10 +19,6 @@
 		.whiteicon {color:white;}
 	</style>
 
-	<script type="text/javascript">
-    function updateTextInput(val) {
-      document.getElementById('displaypoints').value=val; 
-    }
   </script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -86,31 +82,40 @@
 		        </span>
 		        <br>
 	        
-			      <form style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:left; font-size: 25px; color: #ffffff; font-family: Verdana" id="addingEnv" action="/addingEnv">
-		      	
-				    	<label style="width:auto;" for="name"> Name of Equipment </label>
-				    	<textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name"></textarea>
-			    	
-			    		<br>
-			    		<label for="equip">Select Gear</label>
-				    	<select name="equip" id="equip" data-native-menu="false">
-				    		<option value="" disabled selected>Select your option</option>
-				    		{{#each equipment}}
-			          <option value={{name}}>{{name}}</option>
-								{{/each}}
-			        </select>
-			      
-			    
-			      	<br>
-				    	<label style="width:auto;" for="place"> Type of Place </label>
-				    	<textarea style="width:70%; height:30px; overflow:hidden" id="place" name="place"></textarea>
-				    	
-				    	
-							<input type="submit" class="btn btn-default"  value="ADD ENVIRONMENT">
+		      <form style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:left; font-size: 25px; color: #ffffff; font-family: Verdana" id="addingEquip" action="/addingEquip">
+	      	
+			    	<label style="width:auto;" for="name"> Name of Equipment </label>
+			    	<textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name"></textarea>
+		    	
+		    		<br>
+		    		<span>
+		    			<label for="type"> Type of Equipment </label>
+		    			<select name="type" id="type" data-native-menu="false">
+  							<option value="" disabled selected>Select your option</option>
+  							<option value="open-end"> open-end</option>
+  							<option value="closed-end"> closed-end</option>
+  							<option value="in-ear"> in-ear</option>
+  							<option value="Bluetooth-speaker"> Bluetooth-speaker</option>
+  							<option value="soundsystem"> soundsystem</option>
+  							<option value="pc speakers"> pc speakers</option>
+						</select>
+		    		</span>	
+		      		
+					
+		      		<br>
 
-				  	</form>
-		      	
-		      </div>
+		      		<span>
+			    		<label for="usage"> Usage </label>
+				    	<select name="usage" id="usage" data-native-menu="false">
+				    		<option value="" disabled selected>Select your option</option>
+				    		<option value="gaming"> Gaming</option>
+				    		<option value="music"> Music</option>
+				    		<option value="gaming/music"> Gaming/Music</option>
+			        	</select>
+
+			  		</span><br>
+		      		<input type="submit" class="btn btn-default"  value="ADD EQUIPMENT">
+		      	</form>
 		      
 		    </div>
 			    

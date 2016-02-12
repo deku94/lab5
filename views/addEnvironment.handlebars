@@ -88,29 +88,36 @@
 	        
 			      <form style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:left; font-size: 25px; color: #ffffff; font-family: Verdana" id="addingEnv" action="/addingEnv">
 		      	
-			    	<label style="width:auto;" for="name"> Name of Environment </label>
-			    	<textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name"></textarea>
-		    	
-		    		<br>
-		    		<label for="equip">Equipment Type</label>
-			    	<select name="equip" id="equip" data-native-menu="false">
-			    		<option value="" disabled selected>Select your option</option>
-			    		
-			        </select>
+				    	<label style="width:auto;" for="name"> Name of Environment </label>
+				    	<textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name"></textarea>
+			    	
+			    		<br>
+			    		<label for="equip">Select Gear</label>
+				    	<select name="equip" id="equip" data-native-menu="false">
+				    		<option value="" disabled selected>Select your option</option>
+				    		{{#each equipment}}
+			          		<option value={{name}}>{{name}}</option>
+								{{/each}}
+				        </select>
+				      
+				      	<br>
 			      
-			      	<br>
-			      
-			      	<label for="points">NOISE LEVEL</label>
-			      	<i class="fa fa-volume-down"></i>
-			      	<input style="width:68%" type="range" name="points" id="points" value="50" min="0" max="100" data-highlight="true" onchange="updateTextInput(this.value);">
-			      	<i class="fa fa-volume-up"></i>
-			      	<input style="width:5%" type="text" id="displaypoints" value="">
-			      	<br>
+				      	<label for="points">NOISE LEVEL</label>
+				      	<i class="fa fa-volume-down"></i>
+				      	<input style="width:68%" type="range" name="points" id="points" value="50" min="0" max="100" data-highlight="true" onchange="updateTextInput(this.value);">
+				      	<i class="fa fa-volume-up"></i>
+				      	<input style="width:5%" type="text" id="displaypoints" value="">
+				      	<br>
 				    	<label style="width:auto;" for="place"> Type of Place </label>
-				    	<textarea style="width:70%; height:30px; overflow:hidden" id="place" name="place"></textarea>
+				    	<select id="place" name="place">
+				    		<option value="home">Home</option>
+				    		<option value="bus">Bus</option>
+				    		<option value="university">University</option>
+				    	</select>
+				    	<br>
 				    	
 				    	
-							<input type="submit" class="btn btn-default"  value="ADD ENVIRONMENT">
+						<input type="submit" class="btn btn-default"  value="ADD ENVIRONMENT">
 
 				  	</form>
 		      	

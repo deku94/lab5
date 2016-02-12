@@ -68,5 +68,18 @@
 			"type": "open-end headphones",
 			"usage": "gaming/music"	
 		}
-	]
+	],
+
+	"headphones_options":
+	{
+		"open-end":"open-end", 
+		"closed-end" :"closed-end",  
+		"in-ear":"in-ear"
+	},
+	"speaker_options":
+	{
+		"Bluetooth-speaker":"Bluetooth speaker", 
+		"soundsystem":"soundsystem", 
+		"pc-speakers":"pc speakers"
+	}
 }
