@@ -14,6 +14,7 @@ var addEnvironment = require('./routes/addEnvironment');
 var equipment = require('./routes/equipment');
 var environment = require('./routes/environment');
 var addingEnv=require('./routes/addingEnv');
+var toAddEquipment=require('./routes/toAddEquipment');
 // Example route
 // var user = require('./routes/user');
 
@@ -46,6 +47,7 @@ app.get('/about', about.view);
 app.get('/environment', environment.view);
 app.get('/addEnv', addEnvironment.addEnv);
 app.get('/addingEnv',addingEnv.addEnv);
+app.get('/toAddEquipment',toAddEquipment.addEquipment);
 // Example route
 // app.get('/users', user.list);
 

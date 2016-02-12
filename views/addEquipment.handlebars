@@ -61,14 +61,14 @@
 	  </div>
 	</nav>
 	<div class = "container">
-		<a href="/environment">
+		<a href="/equipment">
 			<div class="row row-bottom-margin" style = "margin-bottom: 0px;margin-top:3%; background-color: #151515;
 				  background-size: 100% auto ;
 				  padding-bottom: 0px;">
 		    <div class="col-xs-8" style = "max-height: 125px">
 		      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
 		        <i class="fa fa-arrow-left fa-2x whiteicon"></i>
-		        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> BACK TO ENVIRONMENTS
+		        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> BACK TO EQUIPMENT
 		         <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">Going Back </p></span>
 		       
 		      
@@ -82,29 +82,25 @@
 				  padding-bottom: 0px;">
 		    <div class="" style = "">
 		      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
-		        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> NEW ENVIRONMENTS<br>
+		        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> NEW EQUIPMENT<br>
 		        </span>
 		        <br>
 	        
 			      <form style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:left; font-size: 25px; color: #ffffff; font-family: Verdana" id="addingEnv" action="/addingEnv">
 		      	
-			    	<label style="width:auto;" for="name"> Name of Environment </label>
-			    	<textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name"></textarea>
-		    	
-		    		<br>
-		    		<label for="equip">Equipment Type</label>
-			    	<select name="equip" id="equip" data-native-menu="false">
-			    		<option value="" disabled selected>Select your option</option>
-			    		
+				    	<label style="width:auto;" for="name"> Name of Equipment </label>
+				    	<textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name"></textarea>
+			    	
+			    		<br>
+			    		<label for="equip">Select Gear</label>
+				    	<select name="equip" id="equip" data-native-menu="false">
+				    		<option value="" disabled selected>Select your option</option>
+				    		{{#each equipment}}
+			          <option value={{name}}>{{name}}</option>
+								{{/each}}
 			        </select>
 			      
-			      	<br>
-			      
-			      	<label for="points">NOISE LEVEL</label>
-			      	<i class="fa fa-volume-down"></i>
-			      	<input style="width:68%" type="range" name="points" id="points" value="50" min="0" max="100" data-highlight="true" onchange="updateTextInput(this.value);">
-			      	<i class="fa fa-volume-up"></i>
-			      	<input style="width:5%" type="text" id="displaypoints" value="">
+			    
 			      	<br>
 				    	<label style="width:auto;" for="place"> Type of Place </label>
 				    	<textarea style="width:70%; height:30px; overflow:hidden" id="place" name="place"></textarea>
