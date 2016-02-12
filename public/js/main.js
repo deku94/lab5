@@ -47,6 +47,7 @@ function soundTest() {
         meter.shutdown();
         $("sound-test").html("Test Noise Level");
     } else {
+        testingSound = true;
         $("sound-test").html("Stop Test");
         // grab our canvas
         canvasContext =$("#meter").getContext("2d");
