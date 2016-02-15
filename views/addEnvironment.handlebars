@@ -20,10 +20,11 @@
 	</style>
 
 	<script type="text/javascript">
-    function updateTextInput(val) {
-      document.getElementById('displaypoints').value=val; 
-    }
-  </script>
+	    function updateTextInput(val) {
+	      document.getElementById('displaypoints').value=val; 
+	    }
+
+  	</script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,32 +35,8 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse" style = "background-image: linear-gradient(to bottom, #3f3f3f 100%, #3f3f3f 100%); margin-bottom: 0px">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>                        
-	      </button>
-	      <a class="navbar-brand" style = "font-family: Arial" href="#">My Environments</a>
-	    </div>
-	    <div class="collapse navbar-collapse" id="myNavbar">
-	      <ul class="nav navbar-nav">
-	        <li ><a href="/">Home</a></li>
-	        <li><a href="#">Sound Test</a></li>
-	        <li class="active"><a href="#">My Environments</a></li>
-	        <li ><a href="/equipment">My Equipment</a></li>
-	        <li><a href="#">Community</a></li>
-	        <li><a href="#">About Us</a></li>
-	      </ul>
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
+	{{> navbarsPartials}}
+	
 	<div class = "container">
 		<a href="/environment">
 			<div class="row row-bottom-margin" style = "margin-bottom: 0px;margin-top:3%; background-color: #151515;
@@ -97,22 +74,25 @@
 				    		<option value="" disabled selected>Select your option</option>
 				    		{{#each equipment}}
 			          		<option value={{name}}>{{name}}</option>
-								{{/each}}
+							{{/each}}
 				        </select>
 				      
 				      	<br>
-			      
-				      	<label for="points">NOISE LEVEL</label>
+			      		<!-- IMPLEMENT SOUND TESTER INSTEAD-->
+				      	<label for="points">HOW LOUD IS YOUR ENVIRONMENT?</label>
 				      	<i class="fa fa-volume-down"></i>
-				      	<input style="width:68%" type="range" name="points" id="points" value="50" min="0" max="100" data-highlight="true" onchange="updateTextInput(this.value);">
+				      	<input style="width:50%" type="range" name="points" id="points" value="50" min="0" max="100" data-highlight="true" onchange="updateTextInput(this.value);">
 				      	<i class="fa fa-volume-up"></i>
-				      	<input style="width:5%" type="text" id="displaypoints" value="">
+				      	<input style="width:15%" type="text" id="displaypoints" value="">
 				      	<br>
 				    	<label style="width:auto;" for="place"> Type of Place </label>
+
+
 				    	<select id="place" name="place">
-				    		<option value="home">Home</option>
-				    		<option value="bus">Bus</option>
-				    		<option value="university">University</option>
+				    		{{#each places}}
+			          		<option value={{location}}>{{location}}</option>
+							{{/each}}
+				    		
 				    	</select>
 				    	<br>
 				    	
@@ -128,4 +108,8 @@
 		  </div>
 	</div>
 </body>
+<script type="text/javascript">
+	$("nav div div:nth-child(2) ul li:nth-child(3)").addClass("active");
+	$("nav div.container-fluid div.navbar-header").append("<a class='navbar-brand' style = 'font-family: Arial' href='#'>Environment</a>");
+</script>
 </html>

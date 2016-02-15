@@ -37,32 +37,7 @@
 </head>
 
 <body style = "background-color:#3f3f3f" >
-	<nav class="navbar navbar-inverse" style = "background-image: linear-gradient(to bottom, #3f3f3f 100%, #3f3f3f 100%); margin-bottom: 0px">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" style = "font-family: Arial" href="#"><img src="crescendo.png" style = "max-height: 25px; width: auto"alt = "img"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li ><a href="#">Home</a></li>
-        <li><a href="#">Sound Test</a></li>
-        <li><a href="/environment">My Environments</a></li>
-        <li><a href="/equipment">My Equipment</a></li>
-        <li><a href="#">Community</a></li>
-        <li class="active"><a href="#">About Us</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+	{{> navbarsPartials}}
 <div class = "container" >
 		<div class = "row">
       <div class = "col-xs-12">
@@ -75,4 +50,8 @@
 	
 </div>
 </body>
+<script type="text/javascript">
+  $("nav div div:nth-child(2) ul li:nth-child(6)").addClass("active");
+  $("nav div.container-fluid div.navbar-header").append("<a class='navbar-brand' style = 'font-family: Arial' href='#'>About</a>");
+</script>
 </html>
