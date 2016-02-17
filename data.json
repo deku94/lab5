@@ -71,22 +71,22 @@
 	],
 	"places": [
 		{
-			"location" : "Home"
+			"location" : "home"
 		},		    
 		{
-			"location" : "Bus"
+			"location" : "bus"
 		},	
 		{
-			"location" : "Work"
+			"location" : "work"
 		},
 		{
-			"location" : "Room"
+			"location" : "room"
 		},
 		{
-			"location" : "Dorm"
+			"location" : "dorm"
 		},
 		{
-			"location" : "Campus"
+			"location" : "campus"
 		}    
 			
 	],

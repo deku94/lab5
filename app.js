@@ -11,13 +11,13 @@ var handlebars = require('express3-handlebars')
 var index = require('./routes/index');
 var about = require('./routes/about');
 var soundtest = require('./routes/soundtest');
-var addEnvironment = require('./routes/addEnvironment');
+//var addEnvironment = require('./routes/addEnvironment');
 var equipment = require('./routes/equipment');
 var environment = require('./routes/environment');
 var community = require('./routes/community');
-var addingEnv=require('./routes/addingEnv');
-var toAddEquipment=require('./routes/toAddEquipment');
-var addingEquip=require('./routes/addingEquip');
+var EditEnv=require('./routes/EditEnv');
+//var toAddEquipment=require('./routes/toAddEquipment');
+var EditEquip=require('./routes/EditEquip');
 // Example route
 // var user = require('./routes/user');
 
@@ -50,10 +50,10 @@ app.get('/about', about.view);
 app.get('/community', community.view);
 app.get('/environment', environment.view);
 app.get('/soundtest', soundtest.view);
-app.get('/addEnv', addEnvironment.addEnv);
-app.get('/addingEnv',addingEnv.addEnv);
-app.get('/toAddEquipment',toAddEquipment.addEquipment);
-app.get('/addingEquip',addingEquip.addingEquip);
+app.get('/addEnv', EditEnv.addEnv);
+app.get('/addingEnv',EditEnv.addingEnv);
+app.get('/AddEquip',EditEquip.addEquipment);
+app.get('/AddingEquip',EditEquip.addingEquip);
 // Example route
 // app.get('/users', user.list);
 
