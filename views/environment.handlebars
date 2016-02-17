@@ -38,48 +38,9 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse" style = "background-image: linear-gradient(to bottom, #3f3f3f 100%, #3f3f3f 100%); margin-bottom: 0px">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" style = "font-family: Arial" href="#">My Environments</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li ><a href="/">Home</a></li>
-        <li><a href="/soundtest">Sound Test</a></li>
-        <li class="active"><a href="#">My Environments</a></li>
-        <li ><a href="/equipment">My Equipment</a></li>
-        <li><a href="/community">Community</a></li>
-        <li><a href="/about">About Us</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+	{{> navbarsPartials}}
 <div class = "container" >
-<a href="/addEnv">
-  <div class="row row-bottom-margin" style = "margin-bottom: 0px;margin-top:3%; background-color: #151515;
-  background-size: 100% auto ;
-  padding-bottom: 0px;">
-    <div class="col-xs-8" style = "max-height: 125px">
-      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
-        <i class="fa fa-plus fa-2x whiteicon"></i>
-        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> ADD ENVIRONMENT
-         <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">add New Environment </p></span>
-       
-      
-      </div>
-    </div>
-  </div>
-</a>	
+
 {{#each environment}}
 <div class="row row-bottom-margin" style = "margin-bottom: 0px; background-color: #151515;
 background-size: 100% auto ;
@@ -95,8 +56,27 @@ padding-bottom: 0px;">
   </div>
 </div>
 {{/each}}
+<a href="/addEnv">
+  <div class="row row-bottom-margin" style = "margin-bottom: 0px;margin-top:3%; background-color: #151515;
+  background-size: 100% auto ;
+  padding-bottom: 0px;">
+    <div class="col-xs-8" style = "max-height: 125px">
+      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
+        <i class="fa fa-plus fa-2x whiteicon"></i>
+        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> ADD ENVIRONMENT
+         <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">add New Environment </p></span>
+       
+      
+      </div>
+    </div>
+  </div>
+</a>  
 	
 	
 </div>
 </body>
+<script type="text/javascript">
+  $("nav div div:nth-child(2) ul li:nth-child(3)").addClass("active");
+  $("nav div.container-fluid div.navbar-header").append("<a class='navbar-brand' style = 'font-family: Arial' href='#'>Environment</a>");
+</script>
 </html>

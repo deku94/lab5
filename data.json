@@ -69,7 +69,27 @@
 			"usage": "gaming/music"	
 		}
 	],
-
+	"places": [
+		{
+			"location" : "Home"
+		},		    
+		{
+			"location" : "Bus"
+		},	
+		{
+			"location" : "Work"
+		},
+		{
+			"location" : "Room"
+		},
+		{
+			"location" : "Dorm"
+		},
+		{
+			"location" : "Campus"
+		}    
+			
+	],
 	"headphones_options":
 	{
 		"open-end":"open-end", 

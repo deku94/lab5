@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>My HCI Friends</title>	
+	<title>Add Equipment</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
@@ -30,32 +30,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse" style = "background-image: linear-gradient(to bottom, #3f3f3f 100%, #3f3f3f 100%); margin-bottom: 0px">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>                        
-	      </button>
-	      <a class="navbar-brand" style = "font-family: Arial" href="#">My Environments</a>
-	    </div>
-	    <div class="collapse navbar-collapse" id="myNavbar">
-	      <ul class="nav navbar-nav">
-	        <li ><a href="/">Home</a></li>
-	        <li><a href="/soundtest">Sound Test</a></li>
-	        <li ><a href="/environment">My Environments</a></li>
-	        <li class="active"><a href="/equipment">My Equipment</a></li>
-	        <li><a href="#">Community</a></li>
-	        <li><a href="/about">About Us</a></li>
-	      </ul>
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
+	{{> navbarsPartials}}
 	<div class = "container">
 		<a href="/equipment">
 			<div class="row row-bottom-margin" style = "margin-bottom: 0px;margin-top:3%; background-color: #151515;
@@ -121,5 +96,10 @@
 			    
 		  </div>
 	</div>
+	
 </body>
+<script type="text/javascript">
+	$("nav div div:nth-child(2) ul li:nth-child(3)").addClass("active");
+	$("nav div.container-fluid div.navbar-header").append("<a class='navbar-brand' style = 'font-family: Arial' href='#'>Equipment</a>");
+</script>
 </html>
