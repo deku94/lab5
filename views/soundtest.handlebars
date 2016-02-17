@@ -15,22 +15,37 @@
         <link rel="stylesheet" href="css/bootstrap-theme.css">
 	</head>	
 	<body>
-        {{>navbarsPartials}}
+        {{> navbarsPartials}}
 		
 		<div class="container">
-            <div style="padding-top: 20%;">
+            <div>
+                <form id="environment">
+                    <h4>Current Environment</h4>
+                    <select form="environment">
+                        {{#each environment}}
+                            <option value={{name}}>{{name}}</option>
+                        {{/each}}
+                    </select>
+                </form>
+            </div>
+            <div style="padding-top: 10%">
                 <i class="fa fa-volume-up fa-5x"></i>
-                <button type="button" class="btn btn-primary btn-lg" id="sound-test">Test Noise Level</button>
+                <button type="button" class="btn btn-primary btn-lg" id="sound-test" style="margin-left:5%; vertical-align:75%">Test Noise Level</button>
             </div>
             <div id="meter-div" hidden="hidden">
-                <canvas id="meter" width="500" height="50"></canvas>
-                <img style="width:5em" src="https://cdn1.iconfinder.com/data/icons/computer-hardware-4/512/audio_speakers-2-512.png"></img>
-                <i class="fa fa-headphones fa-5x"></i>     
+                <div>
+                    <canvas id="meter" width="500" height="50"></canvas>
+                </div>
+                <div>
+                    <img style="width:5em; vertical-align:top" src="https://cdn1.iconfinder.com/data/icons/computer-hardware-4/512/audio_speakers-2-512.png"/>
+                    <i class="fa fa-headphones fa-5x" style="position:relative; left:170px"></i> 
+                </div>    
             </div>
+            <div>
          </div>
 	</body>	
     <script type="text/javascript">
-        $("nav div div:nth-child(2) ul li:nth-child(2)").addClass("active");
+        $("#soundtest-nav").addClass("active");
         $("nav div.container-fluid div.navbar-header").append("<a class='navbar-brand' style = 'font-family: Arial' href='#'>Sound Test</a>");
     </script>
 </html>
