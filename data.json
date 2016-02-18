@@ -2,7 +2,7 @@
 	"environment": [
 		{
 			"name": "Home",
-			"equipment": "Senheiser2",
+			"equipment": "Senheiser 2",
 			"noise": "quiet",
 			"type": "home"			
 		},

@@ -54,6 +54,7 @@ app.get('/addEnv', EditEnv.addEnv);
 app.get('/addingEnv',EditEnv.addingEnv);
 app.get('/AddEquip',EditEquip.addEquipment);
 app.get('/AddingEquip',EditEquip.addingEquip);
+app.get('/environment/view/:id',EditEnv.view);
 // Example route
 // app.get('/users', user.list);
 

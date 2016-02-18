@@ -27,5 +27,24 @@ module.exports={
 	// Your code goes here
 		console.log("ADD ENV");
 		res.render('addEnvironment',data);
+	},
+	view :function(req,res){
+		console.log("YES");
+		console.log(req.params.id);
+		var finding=String(req.params.id);
+		var key;
+		for(key in data.equipment){
+			if(finding.localeCompare(String(data['equipment'][key]['name']))==0){
+				res.json(data['equipment'][key]);
+				break;
+			}
+
+		}
+		res.json({
+			"name": String(req.params.id),
+			"type": "NO INFO",
+			"usage": "NO INFO"
+		});
+		
 	}
 }
