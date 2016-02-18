@@ -32,6 +32,7 @@ module.exports={
 		console.log("YES");
 		console.log(req.params.id);
 		var finding=String(req.params.id);
+		var total;
 		var key;
 		for(key in data.equipment){
 			if(finding.localeCompare(String(data['equipment'][key]['name']))==0){
