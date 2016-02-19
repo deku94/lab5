@@ -107,7 +107,7 @@ function gotStream(stream) {
     mediaStreamSource.connect(meter);
 
     // kick off the visual updating
-    window.setTimeout(shutdown, 10000);
+    window.setTimeout(shutdown, 7500);
     drawLoop();
 }
 

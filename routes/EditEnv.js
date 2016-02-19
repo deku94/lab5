@@ -28,6 +28,12 @@ module.exports={
 	addEnv : function(req, res) {    
 	// Your code goes here
 		console.log("ADD ENV");
+        var name = req.query.name || "";
+        var decibel = req.query.decibels || "50";
+        data["soundTestQuery"] = {
+            "name": name,
+            "soundValue": decibel
+        }
 		res.render('addEnvironment',data);
 	},
 	view :function(req,res){

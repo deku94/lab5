@@ -19,14 +19,15 @@
 		
 		<div class="container">
             <div>
-                <form id="environment" role="form" method="get" action="/addEnv">
+                <form id="environment" role="form" method="post" action="/addEnv">
                     <h4>Current Environment</h4>
-                    <select form="environment">
+                    <select name="envName" form="environment">
                         <option value='New'>New</option>
                         {{#each environment}}
                             <option value='{{name}}'>{{name}}</option>
                         {{/each}}
                     </select>
+                    <input id="decibels" name="decibels" type="hidden"></input>
                     <input id="submitBtn" type="submit" class="btn btn-primary btn-lg" id="save-results" value="Save to Environment"></input>
                 </form>
             </div>
