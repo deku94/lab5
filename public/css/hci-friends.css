@@ -16,3 +16,43 @@ h1, h2, h3, h4, h5 {
 {
 	max-width: 200px;
 }
+.box-title
+{
+	margin-left: 10px; 
+	padding-bottom: 0px; 
+	padding-bottom: 0px; 
+	margin-bottom: 0px; 
+	text-align:center; 
+	font-size: 25px; 
+	color: #ffffff; 
+	font-family: Verdana
+}
+.box-subtitle
+{
+	text-align: left; 
+	padding-top: 0px; 
+	margin-top: 0px; 
+	font-size: 10px
+}
+.row-bottom-margin {
+    	margin-bottom: 5px !important;
+    	padding-bottom: 5px !important;
+    	background-color: #151515;
+		background-size: 100% auto ;
+    }
+.box {
+    padding: 0 5px 0 5px;
+}
+.row-bottom-margin-hidden
+{
+	background-color: #151515; 
+	background-size: 100% auto ; 
+	overflow:hidden;
+	display:none;
+}
+.inner {
+    width: 50%;
+    
+    margin: 0 auto; 
+}
+ .whiteicon {color:white;}
