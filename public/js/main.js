@@ -26,14 +26,14 @@ SOFTWARE.
 console.log("hello");
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
-	initializePage();
+	initializeSoundPage();
     console.log("Initialized page");
 })
 
 /*
  * Function that is called when the document is ready.
  */
-function initializePage() {
+function initializeSoundPage() {
     $('#sound-test').click(soundTest);
     console.log("Applied click function");
 }
@@ -48,13 +48,11 @@ var mediaStreamSource = null;
 function soundTest() {
     console.log("Clicked sound test button");
     if (testingSound == true) {
-        meter.shutdown();
-        $("#meter-div").hide();
-        $("#sound-test").html("Test Noise Level");
-        testingSound = false;
+        shutdown();
     } else {
         testingSound = true;
-        $("#sound-test").html("Stop Test");
+        $("#test-result-div").hide();
+        $("#sound-test").html("Testing...");
         $("#meter-div").show();
         // grab our canvas
         canvasContext =$("#meter")[0].getContext("2d");
@@ -94,7 +92,8 @@ function soundTest() {
 }
 
 function didntGetStream() {
-    alert('Stream generation failed.');
+    alert("Couldn't gain access to microphone.");
+    shutdown();
 }
 
 var mediaStreamSource = null;
@@ -102,12 +101,12 @@ var mediaStreamSource = null;
 function gotStream(stream) {
     // Create an AudioNode from the stream.
     mediaStreamSource = audioContext.createMediaStreamSource(stream);
-
-    // Create a new volume meter and connect it.
+    
     meter = createAudioMeter(audioContext);
     mediaStreamSource.connect(meter);
 
     // kick off the visual updating
+    window.setTimeout(shutdown, 10000);
     drawLoop();
 }
 
@@ -126,4 +125,40 @@ function drawLoop( time ) {
 
     // set up the next visual callback
     rafID = window.requestAnimationFrame( drawLoop );
+}
+
+function shutdown() {
+    var calculatedDecibels = calculateDecibels();
+    if (calculatedDecibels >= 50) {
+        $("#test-result-div").html("<i class='fa fa-headphones fa-5x' style='position:relative; left:170px'></i>"
+        +"<p>You should probably wear headphones or use a less sensitive microphone</p>");
+    } else {
+        $("#test-result-div").html("<img style='width:5em; vertical-align:top' src='https://cdn1.iconfinder.com/data/icons/computer-hardware-4/512/audio_speakers-2-512.png'/>"
+        +"<p>You should be fine with speakers</p>");
+    }
+    $("#test-result-div").show();
+    if (meter != null) {
+        meter.shutdown();
+    }
+    if (mediaStreamSource != null) {
+        mediaStreamSource.disconnect();
+    }
+    $("#meter-div").hide();
+    $("#sound-test").html("Test Noise Level");
+    testingSound = false;
+}
+
+function calculateDecibels() {
+    if (meter == null) {
+        return;
+    } else {
+        var sum = 0;
+        meter.recordedDBs.forEach(function(element) {
+            sum += element;
+        }, this);
+        var avgDecibels = sum/meter.recordedDBs.length;
+        
+        console.log(avgDecibels);
+        return avgDecibels;
+    }
 }

@@ -44,6 +44,7 @@ function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
 	processor.clipping = false;
 	processor.lastClip = 0;
 	processor.volume = 0;
+    processor.recordedDBs = [];
 	processor.clipLevel = clipLevel || 0.98;
 	processor.averaging = averaging || 0.95;
 	processor.clipLag = clipLag || 750;
@@ -87,8 +88,14 @@ function volumeAudioProcess( event ) {
     }
 
     // ... then take the square root of the sum.
+    
     var rms =  Math.sqrt(sum / bufLength);
-
+    var ref = 0.00008;
+    var deb = 20 * Math.log10(rms/ref);
+    if (deb == Number.NEGATIVE_INFINITY) {
+        deb = 0;
+    }
+    this.recordedDBs.push(deb);
     // Now smooth this out with the averaging factor applied
     // to the previous sample - take the max here because we
     // want "fast attack, slow release."
