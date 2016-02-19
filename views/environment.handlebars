@@ -19,22 +19,7 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->   
-    <style>
-    .row-bottom-margin {
-    	margin-bottom: 5px !important;
-    	padding-bottom: 5px !important;
-    }
-    .box {
-    padding: 0 5px 0 5px;
-}
-.inner {
-    width: 50%;
-    
-    margin: 0 auto; 
-}
- .whiteicon {color:white;}
-    </style>     
+    <![endif]-->        
 </head>
 
 <body>
@@ -42,25 +27,23 @@
 <div class = "container" >
 
 {{#each environment}}
-<div class="row row-bottom-margin listing" style = "margin-bottom: 0px; background-color: #151515;
-background-size: 100% auto ;
-padding-bottom: 0px;">
+<div class="row row-bottom-margin listing">
   <div class="col-xs-8" style = "max-height: 125px">
     <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
       <i class="fa fa-{{type}} fa-2x whiteicon"></i>
-      <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> {{name}}
-       <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">{{equipment}} - {{noise}} </p></span>
+      <span class = "box-title"> {{name}}
+       <p class = "box-subtitle">{{equipment}} - {{noise}} </p></span>
      
     
     </div>
   </div>
 </div>
-<div class='row row-bottom-margin'  style = 'margin-bottom: 0px; background-color: #151515; background-size: 100% auto ; padding-bottom: 0px;overflow:hidden;display:none'>  
+<div class='row row-bottom-margin row-bottom-margin-hidden'>  
   <div class="col-xs-8" style = "max-height: 125px">
     <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
       <i class="fa fa-{{type}} fa-2x whiteicon"></i>
-      <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> {{name}}
-       <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">{{equipment}} - {{noise}} </p></span>
+      <span class = "box-title"> {{name}}
+       <p class = "box-subtitle">{{equipment}} - {{noise}} </p></span>
      
     
     </div>
@@ -69,17 +52,13 @@ padding-bottom: 0px;">
 </div>
 {{/each}}
 <a href="/addEnv">
-  <div class="row row-bottom-margin" style = "margin-bottom: 0px; background-color: #151515;
-  background-size: 100% auto ;
-  padding-bottom: 0px;">
-    <div class="col-xs-8" style = "max-height: 125px">
-      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
-        <i class="fa fa-plus fa-2x whiteicon"></i>
-        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> ADD ENVIRONMENT
-         <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">add New Environment </p></span>
-       
-      
-      </div>
+  <div class="row row-bottom-margin">
+    <div class="col-xs-12 text-center" style = "max-height: 125px">
+    <div style = "padding-top: 6%; padding-bottom: 6%" >
+      <span class = "box-title">
+        <i class="fa fa-plus-circle fa-2x whiteicon"></i> 
+        </span>
+    </div>
     </div>
   </div>
 </a>  

@@ -127,3 +127,11 @@ function drawLoop( time ) {
     // set up the next visual callback
     rafID = window.requestAnimationFrame( drawLoop );
 }
+function deletePost( name, link ) {
+    var ask = window.confirm("Do you want to leave Crescendo to "+ name + "?");
+    if (ask) {
+
+        document.location.href = link;
+
+    }
+}
