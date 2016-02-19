@@ -26,6 +26,7 @@
 	{{> navbarsPartials}}
 <div class = "container" >
 
+<<<<<<< HEAD
 {{#each environment}}
 <div class="row row-bottom-margin listing">
   <div class="col-xs-8" style = "max-height: 125px">
@@ -59,10 +60,42 @@
         <i class="fa fa-plus-circle fa-2x whiteicon"></i> 
         </span>
     </div>
+  {{#each environment}}
+  <div class="row row-bottom-margin listing" style = "margin-bottom: 0px; background-color: #151515;
+  background-size: 100% auto ;
+  padding-bottom: 0px;">
+    <div class="col-xs-8" style = "max-height: 125px">
+      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
+        <i class="fa fa-{{type}} fa-2x whiteicon"></i>
+        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> {{name}}
+         <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">{{equipment}} - {{noise}} </p></span>
+       </div>
+
     </div>
+    <i id="dir" class="fa fa-sort-desc fa-2x whiteicon" style="float:right;margin-right:4%"></i>
   </div>
-</a>  
-	
+  <div class='row row-bottom-margin' id='{{equipment}}'  style = 'margin-bottom: 0px; background-color:#333333; background-size: 100% auto ; padding-bottom: 0px;overflow:hidden;display:none'>  
+    <div class="" style = "max-height: 125px">
+      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
+        <i class="fa fa-{{type}} fa-2x whiteicon"></i>
+        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana;"> Equipment for {{name}}
+         <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px"></p></span>
+       
+      
+      </div>
+    </div>
+
+  </div>
+  {{/each}}
+  <a href="/addEnv">
+    <div class="row row-bottom-margin" style = "margin-bottom: 0px; background-color: #151515;
+    background-size: 100% auto ;
+    padding-bottom: 0px;">
+      <center><i class="fa fa-plus fa-3x whiteicon"></i></center>
+      
+    </div>
+  </a>  
+  	
 	
 </div>
 </body>

@@ -2,7 +2,7 @@
 	"environment": [
 		{
 			"name": "Home",
-			"equipment": "Senheiser2",
+			"equipment": "Senheiser 2",
 			"noise": "quiet",
 			"type": "home"			
 		},
@@ -20,7 +20,7 @@
 		},
 		{
 			"name": "Room",
-			"equipment": "HHX - 2100",
+			"equipment": "HHX-2100",
 			"noise": "quiet",
 			"type": "home"	
 		},
@@ -39,7 +39,7 @@
 	],
 	"equipment": [
 		{
-			"name": "PDX-250",
+			"name": "PDX-510",
 			"type": "open-end headphones",
 			"usage": "gaming/music"			
 		},
@@ -49,7 +49,7 @@
 			"usage": "music"	
 		},
 		{
-			"name": "HX - 200",
+			"name": "HX-200",
 			"type": "open-end headphones",
 			"usage": "gaming/music"	
 		},
