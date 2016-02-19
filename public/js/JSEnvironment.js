@@ -25,12 +25,13 @@ function extendTab(event){
 	
 	$(icon).toggleClass("fa-sort-desc");
 	$(icon).toggleClass("fa-sort-asc");
-	$.get("/environment/view/"+link,views);
+	$.get("environment/view/"+link,views);
 	/*$(this).after("<div class='row row-bottom-margin info' style = 'margin-bottom: 0px; background-color: #151515; background-size: 100% auto ; padding-bottom: 0px;overflow:hidden;'>  </div>");
 		*/
 
 }
 function views(e){
+	console.log(e);
 	var n=e['name'];
 	//console.log($( "[id="+n+"]"+' div div span'));
 	var text="Equipment:" + e['name']+"<br>Type:"+e['type']+"<br>Usage:"+e['usage'];

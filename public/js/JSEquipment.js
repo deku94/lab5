@@ -18,8 +18,8 @@ function extendTab(event){
 	var link=($(this).next()).attr('id');
 
 	var icon=$(this).find('#dir');
-	$(this).css("background-color","red");
-	$.get("/equipment/view/"+link,views);
+	//$(this).css("background-color","red");
+	$.get("equipment/view/"+link,views);
 	
 	
 	/*$(this).after("<div class='row row-bottom-margin info' style = 'margin-bottom: 0px; background-color: #151515; background-size: 100% auto ; padding-bottom: 0px;overflow:hidden;'>  </div>");
@@ -50,9 +50,10 @@ function toggling(l){
 	$(l).slideToggle( "slow" );
 	
 	$(l).prev().toggleClass("row-bottom-margin");
-	
-	$(l).prev().toggleClass("fa-sort-desc");
-	$(l).prev().toggleClass("fa-sort-asc");
+	var icon=($(l).prev()).find('#dir')
+	console.log(icon);
+	$(icon).toggleClass("fa-sort-desc");
+	$(icon).toggleClass("fa-sort-asc");
 }
 /*
 It should be sound level, environment name, the equipment used in the environment.
