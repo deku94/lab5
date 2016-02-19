@@ -165,3 +165,12 @@ function calculateDecibels() {
         return avgDecibels;
     }
 }
+
+function deletePost( name, link ) {
+    var ask = window.confirm("Do you want to leave Crescendo to "+ name + "?");
+    if (ask) {
+
+        document.location.href = link;
+
+    }
+}

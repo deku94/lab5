@@ -2,44 +2,50 @@
 	"environment": [
 		{
 			"name": "Home",
-			"equipment": "Senheiser2",
+			"equipment": "Senheiser 2",
 			"noise": "quiet",
-			"type": "home"			
+			"type": "home",
+			"soundValue": "33"			
 		},
 		{
 			"name": "Bus",
 			"equipment": "Apple Earpods",
 			"noise": "loud",
-			"type": "bus"
+			"type": "bus",
+			"soundValue": "100"
 		},
 		{
 			"name": "Work",
 			"equipment": "PDX-510",
 			"noise": "medium",
-			"type": "building"	
+			"type": "building",
+			"soundValue": "66"	
 		},
 		{
 			"name": "Room",
-			"equipment": "HHX - 2100",
+			"equipment": "HHX-2100",
 			"noise": "quiet",
-			"type": "home"	
+			"type": "home",
+			"soundValue": "33"
 		},
 		{
 			"name": "Dorm",
 			"equipment": "PDX-510",
 			"noise": "medium",
-			"type": "home"	
+			"type": "home",
+			"soundValue": "66"	
 		},
 		{
 			"name": "Campus",
 			"equipment": "QHX-222",
 			"noise": "loud",
-			"type": "university"
+			"type": "university",
+			"soundValue": "100"
 		}
 	],
 	"equipment": [
 		{
-			"name": "PDX-250",
+			"name": "PDX-510",
 			"type": "open-end headphones",
 			"usage": "gaming/music"			
 		},
@@ -49,7 +55,7 @@
 			"usage": "music"	
 		},
 		{
-			"name": "HX - 200",
+			"name": "HX-200",
 			"type": "open-end headphones",
 			"usage": "gaming/music"	
 		},
@@ -77,17 +83,11 @@
 			"location" : "bus"
 		},	
 		{
-			"location" : "work"
+			"location" : "building"
 		},
 		{
-			"location" : "room"
-		},
-		{
-			"location" : "dorm"
-		},
-		{
-			"location" : "campus"
-		}    
+			"location" : "university"
+		}  
 			
 	],
 	"headphones_options":
@@ -102,4 +102,5 @@
 		"soundsystem":"soundsystem", 
 		"pc-speakers":"pc speakers"
 	}
+
 }

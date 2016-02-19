@@ -34,18 +34,15 @@
     <![endif]-->        
 </head>
 
-<body>
+<body style = "background-color:#3f3f3f" >
 	{{> navbarsPartials}}
 	<div class = "container">
 		<a href="/environment">
-			<div class="row row-bottom-margin" style = "margin-bottom: 0px;margin-top:3%; background-color: #151515;
-				  background-size: 100% auto ;
-				  padding-bottom: 0px;">
-		    <div class="col-xs-8" style = "max-height: 125px">
-		      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
+			<div class="row row-bottom-margin" >
+		    <div class="col-xs-12">
+		      <div> <!--Changed padding top to 2 and paddint bottom to 15-->
 		        <i class="fa fa-arrow-left fa-2x whiteicon"></i>
-		        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> BACK TO ENVIRONMENTS
-		         <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">Going Back </p></span>
+		        <span class = "box-title" style="font-size:20px"> back to my environments</span>
 		       
 		      
 		      </div>
@@ -56,36 +53,38 @@
 		<div class="row row-bottom-margin" style = "margin-bottom: 0px;margin-top:3%; background-color: #151515;
 				  background-size: 100% auto ;
 				  padding-bottom: 0px;">
-		    <div class="" style = "">
+		    <div class="col-xs-12">
 		      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
-		        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> NEW ENVIRONMENTS<br>
+		        <span class = "box-title"> Add a New Environment<br>
 		        </span>
 		        <br>
 	        
-			      <form style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:left; font-size: 25px; color: #ffffff; font-family: Verdana" id="addingEnv" action="/addingEnv">
-		      	
-				    	<label style="width:auto;" for="name"> Name of Environment </label>
+			      <form  role = "form" id="/addingEnv" action="/addingEnv">
+		      		<div class = "form-group">
+				    	<label class = "form-label" for="name"> Environment Name </label>
 				    	<textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name"></textarea>
-			    	
+			    	</div>
+			    	<div class = "form-group">
+			    		<label class = "form-label" for="equip">Select Gear</label>
 			    		<br>
-			    		<label for="equip">Select Gear</label>
 				    	<select name="equip" id="equip" data-native-menu="false">
 				    		<option value="" disabled selected>Select your option</option>
 				    		{{#each equipment}}
 			          		<option value={{name}}>{{name}}</option>
 							{{/each}}
 				        </select>
-				      
-				      	<br>
+				     </div>
+				    <div class = "form-group">
 			      		<!-- IMPLEMENT SOUND TESTER INSTEAD-->
-				      	<label for="points">HOW LOUD IS YOUR ENVIRONMENT?</label>
-				      	<i class="fa fa-volume-down"></i>
+				      	<label class = "form-label" for="points">Environment Noise Level</label>
+				      	<i class="fa fa-volume-down whiteicon"></i>
 				      	<input style="width:50%" type="range" name="points" id="points" value="50" min="0" max="100" data-highlight="true" onchange="updateTextInput(this.value);">
-				      	<i class="fa fa-volume-up"></i>
-				      	<input style="width:15%" type="text" id="displaypoints" value="">
-				      	<br>
-				    	<label style="width:auto;" for="place"> Type of Place </label>
-
+				      	<i class="fa fa-volume-up whiteicon"></i>
+				      	<input style="width:15%" type="text" id="displaypoints" value="50">
+				     </div>
+				     <div class = "form-group">
+				    	<label class ="form-label" for="place"> Type of Place </label>
+				    	<br>
 
 				    	<select id="place" name="place">
 				    		{{#each places}}
@@ -93,7 +92,7 @@
 							{{/each}}
 				    		
 				    	</select>
-				    	<br>
+				    </div>
 				    	
 				    	
 						<input type="submit" class="btn btn-default"  value="ADD ENVIRONMENT">

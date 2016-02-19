@@ -50,10 +50,19 @@ app.get('/about', about.view);
 app.get('/community', community.view);
 app.get('/environment', environment.view);
 app.get('/soundtest', soundtest.view);
+
 app.get('/addEnv', EditEnv.addEnv);
 app.get('/addingEnv',EditEnv.addingEnv);
+app.get('/environment/view/:id',EditEnv.view);
+app.get('/environment/edit/:name/:sound/:location',EditEnv.edit);
+app.get('/EdittingEnv/:original',EditEnv.editting);
+
+
+
 app.get('/AddEquip',EditEquip.addEquipment);
 app.get('/AddingEquip',EditEquip.addingEquip);
+app.get('/equipment/view/:id',EditEquip.view);
+
 // Example route
 // app.get('/users', user.list);
 
