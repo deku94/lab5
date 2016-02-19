@@ -45,10 +45,79 @@ h1, h2, h3, h4, h5 {
 }
 .row-bottom-margin-hidden
 {
-	background-color: #151515; 
+	margin-bottom: 0px; 
+	background-color:#333333; 
 	background-size: 100% auto ; 
+	padding-bottom: 0px;
 	overflow:hidden;
-	display:none;
+	display:none
+}
+.col-cust-padding
+{
+	padding-top: 2%; 
+	padding-bottom: 15%
+}
+.index-center-title
+{
+	padding-top: 10%; 
+	padding-bottom: 0px; 
+	margin-bottom: 0px; 
+	text-align:center; 
+	font-size: 25px; 
+	color: #ffffff; 
+	font-family: Verdana
+}
+.minibox-title
+{
+	padding-top: 10%; 
+	padding-bottom: 5px; 
+	margin-bottom: 0px; 
+	text-align:left; 
+	font-size: 23px; 
+	color: #ffffff; 
+	font-family: Arial
+}
+.community
+{
+	margin-bottom: 0px; 
+	background:url('http://cdn1.alexwisephotography.net/blog/wp-content/uploads/2008/08/img_0074.jpg') no-repeat center top scroll;
+	background-size: 100% auto;
+	padding-bottom: 0px;
+}
+.equipment
+{
+	background:url('http://api.ning.com/files/kV4MbYiv7oTcpCSOxj6tf0vpTnpJE3*qRIzbNhbAC0g7vMsRAOrfHui2aRCG1xE13hInub1*6MA2y5H9lenabmy-6wimVcwp/1082061792.jpeg') no-repeat center top scroll;
+	background-size: auto 100% ; 
+	border-right:2px solid #3f3f3f;
+}
+.soundtest
+{
+	background:url('../musictest.jpg') no-repeat center top scroll;
+	background-size: 100% auto;
+}
+.environment
+{
+	 background:url('http://4.bp.blogspot.com/-Kk7wBGgaQp8/T3mzOohTNsI/AAAAAAAAAtg/5TowdYXW67k/s1600/BlackandWhiteCityRiverbankWp-long+goodbye.png') no-repeat center top scroll;
+	background-size: auto 100% ; 
+	border-left:2px solid #3f3f3f;
+}
+.minibox-btn
+{
+	padding: 5px;
+	margin-bottom: 20px; 
+	margin-top: 10px; 
+	text-align: center; 
+	margin: auto;
+}
+.index-center-subtitle
+{
+	margin: 0px; 
+	padding-top: 0px;
+	padding-bottom: 5px;
+	text-align:center; 
+	font-family: Verdana; 
+	font-size: 15px; 
+	color: #C0C0C0
 }
 .inner {
     width: 50%;
