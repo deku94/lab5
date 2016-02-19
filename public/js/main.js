@@ -23,7 +23,6 @@ SOFTWARE.
 */
 
 'use strict';
-console.log("hello");
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializeSoundPage();
@@ -35,6 +34,7 @@ $(document).ready(function() {
  */
 function initializeSoundPage() {
     $('#sound-test').click(soundTest);
+    $('#submitBtn').hide();
     console.log("Applied click function");
 }
 var audioContext = null;
@@ -52,6 +52,7 @@ function soundTest() {
     } else {
         testingSound = true;
         $("#test-result-div").hide();
+        $("#submitBtn").hide();
         $("#sound-test").html("Testing...");
         $("#meter-div").show();
         // grab our canvas
@@ -130,13 +131,15 @@ function drawLoop( time ) {
 function shutdown() {
     var calculatedDecibels = calculateDecibels();
     if (calculatedDecibels >= 50) {
-        $("#test-result-div").html("<i class='fa fa-headphones fa-5x' style='position:relative; left:170px'></i>"
-        +"<p>You should probably wear headphones or use a less sensitive microphone</p>");
+        $("#test-details").html("<i class='fa fa-headphones fa-5x' style='position:relative; left:170px'></i>"
+        +"<p>You should probably wear headphones or use a less sensitive microphone. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
     } else {
-        $("#test-result-div").html("<img style='width:5em; vertical-align:top' src='https://cdn1.iconfinder.com/data/icons/computer-hardware-4/512/audio_speakers-2-512.png'/>"
-        +"<p>You should be fine with speakers</p>");
+        $("#test-details").html("<img style='width:5em; vertical-align:top' src='https://cdn1.iconfinder.com/data/icons/computer-hardware-4/512/audio_speakers-2-512.png'/>"
+        +"<p>You should be fine with speakers. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
     }
     $("#test-result-div").show();
+    $("#decibels").val(calculatedDecibels.toFixed(2));
+    $("#submitBtn").show();
     if (meter != null) {
         meter.shutdown();
     }

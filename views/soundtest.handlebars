@@ -19,13 +19,15 @@
 		
 		<div class="container">
             <div>
-                <form id="environment">
+                <form id="environment" role="form" method="get" action="/addEnv">
                     <h4>Current Environment</h4>
                     <select form="environment">
+                        <option value='New'>New</option>
                         {{#each environment}}
-                            <option value={{name}}>{{name}}</option>
+                            <option value='{{name}}'>{{name}}</option>
                         {{/each}}
                     </select>
+                    <input id="submitBtn" type="submit" class="btn btn-primary btn-lg" id="save-results" value="Save to Environment"></input>
                 </form>
             </div>
             <div style="padding-top: 10%">
@@ -36,6 +38,10 @@
                     <canvas id="meter" width="500" height="50"></canvas>
             </div>
             <div id="test-result-div" hidden="hidden">
+                <h4>Results</h4>
+                <div id="test-details">
+                </div>
+                
                 
             </div>
          </div>
