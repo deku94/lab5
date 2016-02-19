@@ -69,16 +69,16 @@
                         </span>
                         <br>
                 
-                        <form style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:left; font-size: 25px; color: #ffffff; font-family: Verdana" id="/addingEnv" action="/addingEnv">
+                        <form style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:left; font-size: 25px; color: #ffffff; font-family: Verdana" id="/addingEnv" action="/EdittingEnv/{{temp.Environment}}">
                     
                             <label style="width:auto;" for="name"> Name of Environment </label>
-                            <textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name" placeholder={{temp.Environment}}></textarea>
+                            <textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name" placeholder={{temp.Environment}}>{{temp.Environment}}</textarea>
                         
                             <br>
 
                             <label for="equip">Select Gear</label>
-                            <select  name="equip" id="equip" data-native-menu="false">
-                                <option selected="selected" value={{name}}>{{temp.name}}</option>
+                            <select id="equip" name="equip"  data-native-menu="false">
+                                <option value='{{temp.name}}' selected="selected">{{temp.name}}</option>
                                 {{#each equipment}}
                                     <option value={{name}}>{{name}}</option>
                                 {{/each}}
@@ -95,19 +95,20 @@
                             <label style="width:auto;" for="place"> Type of Place </label>
 
 
-                            <select id="place" name="place">
-                                <option selected="selected" value={{temp.location}} >{{temp.location}}</option>
+                            <select id="place" name="place" data-native-menu="false">
+                                <option value='{{temp.location}}' selected="selected">{{temp.location}}</option>
                                 {{#each places}}
-                                <option value={{location}}>{{location}}</option>
+                                    <option value={{location}}>{{location}}</option>
                                 {{/each}}
                                 
                             </select>
                             <br>
                             
                             
-                            <input type="submit" class="btn btn-default"  value="EDIT ENVIRONMENT">
-
+                            <input type="submit" class="btn btn-default"  name = 'button' value="EDIT ENVIRONMENT">
+                            <input type="submit" class="btn btn-default"  name ='button' value="DELETE">
                         </form>
+                        
                     
                     </div>
                   

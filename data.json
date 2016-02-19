@@ -83,17 +83,11 @@
 			"location" : "bus"
 		},	
 		{
-			"location" : "work"
+			"location" : "building"
 		},
 		{
-			"location" : "room"
-		},
-		{
-			"location" : "dorm"
-		},
-		{
-			"location" : "campus"
-		}    
+			"location" : "university"
+		}  
 			
 	],
 	"headphones_options":
