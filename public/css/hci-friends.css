@@ -27,6 +27,17 @@ h1, h2, h3, h4, h5 {
 	color: #ffffff; 
 	font-family: Verdana
 }
+.form-label
+{
+	margin-left: 10px; 
+	padding-bottom: 0px; 
+	padding-bottom: 0px; 
+	margin-bottom: 0px; 
+	text-align:left; 
+	font-size: 20px; 
+	color: #C0C0C0 ; 
+	font-family: Verdana
+}
 .box-subtitle
 {
 	text-align: left; 

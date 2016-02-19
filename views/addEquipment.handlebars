@@ -33,14 +33,11 @@
 	{{> navbarsPartials}}
 	<div class = "container">
 		<a href="/equipment">
-			<div class="row row-bottom-margin" style = "margin-bottom: 0px;margin-top:3%; background-color: #151515;
-				  background-size: 100% auto ;
-				  padding-bottom: 0px;">
-		    <div class="col-xs-8" style = "max-height: 125px">
-		      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
+			<div class="row row-bottom-margin" >
+		    <div class="col-xs-12">
+		      <div> <!--Changed padding top to 2 and paddint bottom to 15-->
 		        <i class="fa fa-arrow-left fa-2x whiteicon"></i>
-		        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> BACK TO EQUIPMENT
-		         <p style = "text-align: left; padding-top: 0px; margin-top: 0px; font-size: 10px">Going Back </p></span>
+		        <span class = "box-title" style="font-size:20px"> back to my equipment</span>
 		       
 		      
 		      </div>
@@ -48,23 +45,22 @@
 		  </div>
 		</a>
 
-		<div class="row row-bottom-margin" style = "margin-bottom: 0px;margin-top:3%; background-color: #151515;
-				  background-size: 100% auto ;
-				  padding-bottom: 0px;">
-		    <div class="" style = "">
+		<div class="row row-bottom-margin">
 		      <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
-		        <span style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:center; font-size: 25px; color: #ffffff; font-family: Verdana"> NEW EQUIPMENT<br>
+		        <span class = "box-title"> Add New Equipment<br>
 		        </span>
 		        <br>
 	        
-		      <form style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:left; font-size: 25px; color: #ffffff; font-family: Verdana" id="AddingEquip" action="/AddingEquip">
-	      	
-			    	<label style="width:auto;" for="name"> Name of Equipment </label>
+		      <form style = "padding-left: 10px" id="AddingEquip" action="/AddingEquip">
+	      		<div class="form-group">
+			    	<label class = "form-label" for="name"> Name of Equipment </label>
 			    	<textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name"></textarea>
 		    	
-		    		<br>
+		    	</div>
+		    	<div class="form-group">
 		    		<span>
-		    			<label for="type"> Type of Equipment </label>
+		    			<label class = "form-label" for="type"> Type of Equipment </label>
+		    			<br>
 		    			<select name="type" id="type" data-native-menu="false">
   							<option value="" disabled selected>Select your option</option>
   							<option value="open-end"> open-end</option>
@@ -75,12 +71,11 @@
   							<option value="pc speakers"> pc speakers</option>
 						</select>
 		    		</span>	
-		      		
-					
-		      		<br>
-
+		      	</div>
+		      	<div class="form-group">
 		      		<span>
-			    		<label for="usage"> Usage </label>
+			    		<label class = "form-label" for="usage"> Usage </label>
+			    		<br>
 				    	<select name="usage" id="usage" data-native-menu="false">
 				    		<option value="" disabled selected>Select your option</option>
 				    		<option value="gaming"> Gaming</option>
@@ -88,7 +83,8 @@
 				    		<option value="gaming/music"> Gaming/Music</option>
 			        	</select>
 
-			  		</span><br>
+			  		</span>
+			  	</div?
 		      		<input type="submit" class="btn btn-default"  value="ADD EQUIPMENT">
 		      	</form>
 		      
