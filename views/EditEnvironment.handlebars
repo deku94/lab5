@@ -78,7 +78,7 @@
 
                             <label for="equip">Select Gear</label>
                             <select  name="equip" id="equip" data-native-menu="false">
-                                <option selected value={{name}}>{{temp.name}}</option>
+                                <option selected="selected" value={{name}}>{{temp.name}}</option>
                                 {{#each equipment}}
                                     <option value={{name}}>{{name}}</option>
                                 {{/each}}
@@ -96,7 +96,7 @@
 
 
                             <select id="place" name="place">
-                                <option selected value={{temp.location}} >{{temp.location}}</option>
+                                <option selected="selected" value={{temp.location}} >{{temp.location}}</option>
                                 {{#each places}}
                                 <option value={{location}}>{{location}}</option>
                                 {{/each}}
