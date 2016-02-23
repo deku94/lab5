@@ -5,42 +5,48 @@
 			"equipment": "Senheiser 2",
 			"noise": "quiet",
 			"type": "home",
-			"soundValue": "33"			
+			"soundValue": "33",		
+			"idnum":0
 		},
 		{
 			"name": "Bus",
 			"equipment": "Apple Earpods",
 			"noise": "loud",
 			"type": "bus",
-			"soundValue": "100"
+			"soundValue": "100",
+			"idnum":1
 		},
 		{
 			"name": "Work",
 			"equipment": "PDX-510",
 			"noise": "medium",
 			"type": "building",
-			"soundValue": "66"	
+			"soundValue": "66",
+			"idnum":2	
 		},
 		{
 			"name": "Room",
 			"equipment": "HHX-2100",
 			"noise": "quiet",
 			"type": "home",
-			"soundValue": "33"
+			"soundValue": "33",
+			"idnum":3
 		},
 		{
 			"name": "Dorm",
 			"equipment": "PDX-510",
 			"noise": "medium",
 			"type": "home",
-			"soundValue": "66"	
+			"soundValue": "66",
+			"idnum":4
 		},
 		{
 			"name": "Campus",
 			"equipment": "QHX-222",
 			"noise": "loud",
 			"type": "university",
-			"soundValue": "100"
+			"soundValue": "100",
+			"idnum":5
 		}
 	],
 	"equipment": [
