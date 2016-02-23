@@ -69,16 +69,16 @@
                         </span>
                         <br>
                 
-                        <form style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:left; font-size: 25px; color: #ffffff; font-family: Verdana" id="/addingEnv" action="/EdittingEnv/{{temp.idnum}}/name/soundValue/type/equipment">
+                        <form style = "margin-left: 10px; padding-bottom: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align:left; font-size: 25px; color: #ffffff; font-family: Verdana" id="/addingEnv" action="/EdittingEnv/{{tempEnv.idnum}}">
                     
                             <label style="width:auto;" for="name"> Name of Environment </label>
-                            <textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name" placeholder={{temp.Environment}}>{{temp.Environment}}</textarea>
+                            <textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name" placeholder={{tempEnv.Environment}}>{{tempEnv.Environment}}</textarea>
                         
                             <br>
 
                             <label for="equip">Select Gear</label>
                             <select id="equip" name="equip"  data-native-menu="false">
-                                <option value='{{temp.name}}' selected="selected">{{temp.name}}</option>
+                                <option value='{{tempEnv.name}}' selected="selected">{{tempEnv.name}}</option>
                                 {{#each equipment}}
                                     <option value='{{name}}'>{{name}}</option>
                                 {{/each}}
@@ -88,15 +88,15 @@
                             <!-- IMPLEMENT SOUND TESTER INSTEAD-->
                             <label for="points">HOW LOUD IS YOUR ENVIRONMENT?</label>
                             <i class="fa fa-volume-down"></i>
-                            <input style="width:50%" type="range" name="points" id="points" value="{{temp.soundValue}}" min="0" max="100" data-highlight="true" onchange="updateTextInput(this.value);">
+                            <input style="width:50%" type="range" name="points" id="points" value="{{tempEnv.soundValue}}" min="0" max="100" data-highlight="true" onchange="updateTextInput(this.value);">
                             <i class="fa fa-volume-up"></i>
-                            <input style="width:15%" type="text" id="displaypoints" value="{{temp.soundValue}}">
+                            <input style="width:15%" type="text" id="displaypoints" value="{{tempEnv.soundValue}}">
                             <br>
                             <label style="width:auto;" for="place"> Type of Place </label>
 
 
                             <select id="place" name="place" data-native-menu="false">
-                                <option value='{{temp.location}}' selected="selected">{{temp.location}}</option>
+                                <option value='{{tempEnv.location}}' selected="selected">{{tempEnv.location}}</option>
                                 {{#each places}}
                                     <option value='{{location}}'>{{location}}</option>
                                 {{/each}}

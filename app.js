@@ -55,13 +55,15 @@ app.get('/addEnv', EditEnv.addEnv);
 app.get('/addingEnv',EditEnv.addingEnv);
 app.get('/environment/view/:id',EditEnv.view);
 app.get('/environment/edit/:name/:sound/:location/:equip/:idnum',EditEnv.edit);
-app.get('/EdittingEnv/:original/:name/:sound/:location/:equip',EditEnv.editting);
+app.get('/EdittingEnv/:original',EditEnv.editting);
 
 
 
 app.get('/AddEquip',EditEquip.addEquipment);
 app.get('/AddingEquip',EditEquip.addingEquip);
 app.get('/equipment/view/:id',EditEquip.view);
+app.get('/equipment/edit/:id',EditEquip.editpage);
+app.get('/EdittingEquipment/:id',EditEquip.editting);
 
 // Example route
 // app.get('/users', user.list);

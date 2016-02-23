@@ -26,7 +26,7 @@
 		},
 		{
 			"name": "Room",
-			"equipment": "HHX-2100",
+			"equipment": "HX-200",
 			"noise": "quiet",
 			"type": "home",
 			"soundValue": "33",
@@ -42,7 +42,7 @@
 		},
 		{
 			"name": "Campus",
-			"equipment": "QHX-222",
+			"equipment": "DPS-2510",
 			"noise": "loud",
 			"type": "university",
 			"soundValue": "100",
@@ -53,32 +53,38 @@
 		{
 			"name": "PDX-510",
 			"type": "open-end headphones",
-			"usage": "gaming/music"			
+			"usage": "gaming/music",
+			"idnum":"0"		
 		},
 		{
 			"name": "Senheiser 2",
 			"type": "closed-end headphones",
-			"usage": "music"	
+			"usage": "music",
+			"idnum":"1"	
 		},
 		{
 			"name": "HX-200",
 			"type": "open-end headphones",
-			"usage": "gaming/music"	
+			"usage": "gaming/music"	,
+			"idnum":"2"
 		},
 		{
 			"name": "Apple Earpods",
 			"type": "in-ear earphones",
-			"usage": "music"	
+			"usage": "music",
+			"idnum":"3"	
 		},
 		{
 			"name": "HD-250",
 			"type": "open-end headphones",
-			"usage": "gaming/music"	
+			"usage": "gaming/music"	,
+			"idnum":"4"
 		},
 		{
 			"name": "DPS-2510",
 			"type": "open-end headphones",
-			"usage": "gaming/music"	
+			"usage": "gaming/music"	,
+			"idnum":"5"
 		}
 	],
 	"places": [

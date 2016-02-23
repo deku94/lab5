@@ -68,7 +68,7 @@ module.exports={
 			if(finding==data['environment'][key]['idnum'] ){
 				
 
-				data['temp']={
+				data['tempEnv']={
 					"Environment": req.params.name,
 					"name": req.params.equip,
 					"type": req.params.type,
@@ -77,14 +77,14 @@ module.exports={
 					"idnum":req.params.idnum
 				};
 				console.log('YES');
-				console.log(data['temp']);
+				console.log(data['tempEnv']);
 				res.render('EditEnvironment',data);
 				return;
 			}
 
 
 		}
-		data['temp']={
+		data['tempEnv']={
 			"Environment": req.params.name,
 			"name": "NO INFO",
 			"type": "NO INFO",
@@ -138,13 +138,11 @@ module.exports={
 
 		}
 		//res.render("environment",data);
+		
 		res.redirect('/environment');
 			
 		return;
 		
-	},
-	deleteEnv: function(req,res){
-
-
 	}
+
 }
