@@ -54,7 +54,7 @@ app.get('/soundtest', soundtest.view);
 app.get('/addEnv', EditEnv.addEnv);
 app.get('/addingEnv',EditEnv.addingEnv);
 app.get('/environment/view/:id',EditEnv.view);
-app.get('/environment/edit/:name/:sound/:location/:equip/:id',EditEnv.edit);
+app.get('/environment/edit/:name/:sound/:location/:equip/:idnum',EditEnv.edit);
 app.get('/EdittingEnv/:original/:name/:sound/:location/:equip',EditEnv.editting);
 
 

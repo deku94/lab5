@@ -6,7 +6,7 @@
 			"noise": "quiet",
 			"type": "home",
 			"soundValue": "33",		
-			"idnum":0
+			"idnum":"0"
 		},
 		{
 			"name": "Bus",
@@ -14,7 +14,7 @@
 			"noise": "loud",
 			"type": "bus",
 			"soundValue": "100",
-			"idnum":1
+			"idnum":"1"
 		},
 		{
 			"name": "Work",
@@ -22,7 +22,7 @@
 			"noise": "medium",
 			"type": "building",
 			"soundValue": "66",
-			"idnum":2	
+			"idnum":"2"	
 		},
 		{
 			"name": "Room",
@@ -30,7 +30,7 @@
 			"noise": "quiet",
 			"type": "home",
 			"soundValue": "33",
-			"idnum":3
+			"idnum":"3"
 		},
 		{
 			"name": "Dorm",
@@ -38,7 +38,7 @@
 			"noise": "medium",
 			"type": "home",
 			"soundValue": "66",
-			"idnum":4
+			"idnum":"4"
 		},
 		{
 			"name": "Campus",
@@ -46,7 +46,7 @@
 			"noise": "loud",
 			"type": "university",
 			"soundValue": "100",
-			"idnum":5
+			"idnum":"5"
 		}
 	],
 	"equipment": [

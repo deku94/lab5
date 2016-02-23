@@ -17,13 +17,14 @@ module.exports={
 		data["environment"].push({
 
 			"name": req.query.name,
-			"equipment": req.query.equip,
+			"equipment": String(req.query.equip),
 			"noise": noise,
 			"type": req.query.place,
 			"soundValue":req.query.points,
 			"idnum":index
 		});
 		index++;
+		console.log(req.params.equip);
 		//res.render("environment",data);
 		res.redirect('/environment');
 	},
@@ -56,15 +57,15 @@ module.exports={
 	},
 	edit: function(req,res){
 		console.log("EDIT ");
-		var finding=String(req.params.id);
+		var finding=req.params.idnum;
 		var equip= String(req.params.equip);
 		var total;
 		var key;
 		
 		
-		for(key in data.equipment){
+		for(key in data.environment){
 
-			if(finding.localeCompare(String(data['environment'][key]['idnum']))==0 ){
+			if(finding==data['environment'][key]['idnum'] ){
 				
 
 				data['temp']={
@@ -73,7 +74,7 @@ module.exports={
 					"type": req.params.type,
 					"soundValue": req.params.sound,
 					"location":req.params.location,
-					"idnum":req.params.id
+					"idnum":req.params.idnum
 				};
 				console.log('YES');
 				console.log(data['temp']);
@@ -89,7 +90,7 @@ module.exports={
 			"type": "NO INFO",
 			"soundValue":req.params.sound,
 			"location":req.params.location,
-			"idnum":0
+			"idnum":-1
 		};
 		
 		res.render('EditEnvironment',data);
@@ -101,7 +102,7 @@ module.exports={
 		//console.log('BEGINEDIT');
 		//console.log(finding);
 		
-		for(key in data.equipment){
+		for(key in data.environment){
 
 			if(String(finding).localeCompare(String(data['environment'][key]['idnum']))==0){
 				console.log(data['equipment'][key]);
