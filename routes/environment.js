@@ -11,6 +11,7 @@ exports.view = function(req, res){
 			"location":req.params.location,
 			"idnum":-1
 		};*/
+	data['soundTemp']['value']=50;
 	res.render('environment', data);
 
 };

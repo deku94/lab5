@@ -9,7 +9,7 @@
 	
 	<script src="/js/jquery-1.11.0.js" type="text/javascript"></script>
 	<script src="/js/bootstrap.js" type="text/javascript"></script>
-	<script src="/js/hci-friends.js" type="text/javascript"></script>
+	
 	<link rel="stylesheet" href="css/hci-friends.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.css">
@@ -61,7 +61,7 @@
 	        
 			      <form  role = "form" id="/addingEnv" action="/addingEnv">
 		      		<div class = "form-group">
-				    	<label class = "form-label" for="name"> Environment Name </label>
+				    	<label class = "form-label" for="name">Environment Name </label>
 				    	<textarea style="width:70%; height:30px; overflow:hidden" id="name" name="name"></textarea>
 			    	</div>
 			    	<div class = "form-group">
@@ -76,11 +76,11 @@
 				     </div>
 				    <div class = "form-group">
 			      		<!-- IMPLEMENT SOUND TESTER INSTEAD-->
-				      	<label class = "form-label" for="points">Environment Noise Level</label>
-				      	<i class="fa fa-volume-down whiteicon"></i>
-				      	<input style="width:50%" type="range" name="points" id="points" value="50" min="0" max="100" data-highlight="true" onchange="updateTextInput(this.value);">
-				      	<i class="fa fa-volume-up whiteicon"></i>
-				      	<input style="width:15%" type="text" id="displaypoints" value="50">
+				      	<label class = "form-label" for="points">Environment Noise Level</label><br>
+				      	<i class="fa fa-volume-down fa-2x whiteicon"></i>
+				      	<input style="width:50%" type="range" name="points" id="points" value="{{soundTemp.value}}" min="0" max="100" data-highlight="true" onchange="updateTextInput(this.value);">
+				      	<i class="fa fa-volume-up fa-2x whiteicon"></i>
+				      	<input style="width:15%" type="text" id="displaypoints" value="{{soundTemp.value}}">
 				     </div>
 				     <div class = "form-group">
 				    	<label class ="form-label" for="place"> Type of Place </label>

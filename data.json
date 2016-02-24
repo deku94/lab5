@@ -113,6 +113,9 @@
 		"Bluetooth-speaker":"Bluetooth speaker", 
 		"soundsystem":"soundsystem", 
 		"pc-speakers":"pc speakers"
+	},
+	"soundTemp":{
+		"value":"50"
 	}
 
 }

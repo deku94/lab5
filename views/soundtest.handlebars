@@ -19,9 +19,9 @@
 		
 		<div class="container">
             <div>
-                <form id="environment" role="form" method="get" action="/addEnv">
+                <form id="environment"  action="/environment/pickEnv">
                     <h4>Current Environment</h4>
-                    <select form="environment">
+                    <select name="environment">
                         <option value='New'>New</option>
                         {{#each environment}}
                             <option value='{{name}}'>{{name}}</option>

@@ -51,12 +51,14 @@ app.get('/community', community.view);
 app.get('/environment', environment.view);
 app.get('/soundtest', soundtest.view);
 
+app.get('/soundtest/updateJSON/:value',soundtest.updateJSON);
+
 app.get('/addEnv', EditEnv.addEnv);
 app.get('/addingEnv',EditEnv.addingEnv);
 app.get('/environment/view/:id',EditEnv.view);
-app.get('/environment/edit/:name/:sound/:location/:equip/:idnum',EditEnv.edit);
+app.get('/environment/edit/:idnum',EditEnv.edit);
 app.get('/EdittingEnv/:original',EditEnv.editting);
-
+app.get('/environment/pickEnv',EditEnv.pickEnv);
 
 
 app.get('/AddEquip',EditEquip.addEquipment);

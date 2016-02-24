@@ -13,7 +13,13 @@ module.exports={
 		else{
 			noise='loud';
 		}
-		
+		for (key in data['environment']){
+			if(String(data['environment'][key]['name']).localeCompare(String(req.query.name))==0){
+				console.log("MATCH");
+				res.redirect('/environment');
+				return;
+			}
+		}
 		data["environment"].push({
 
 			"name": req.query.name,
@@ -24,13 +30,14 @@ module.exports={
 			"idnum":index
 		});
 		index++;
-		console.log(req.params.equip);
+		//console.log(req.params.equip);
 		//res.render("environment",data);
+
 		res.redirect('/environment');
 	},
 	addEnv : function(req, res) {    
 	// Your code goes here
-		console.log("ADD ENV");
+	
 		res.render('addEnvironment',data);
 	},
 	view :function(req,res){
@@ -66,15 +73,17 @@ module.exports={
 		for(key in data.environment){
 
 			if(finding==data['environment'][key]['idnum'] ){
-				
-
+				finding=data['environment'][key]
+				if(String(data['soundTemp']['value']).localeCompare('50')==0 ){
+					data['soundTemp']['value']=finding.soundValue;
+				}	
 				data['tempEnv']={
-					"Environment": req.params.name,
-					"name": req.params.equip,
-					"type": req.params.type,
-					"soundValue": req.params.sound,
-					"location":req.params.location,
-					"idnum":req.params.idnum
+					"Environment": finding.name,
+					"name": finding.equipment,
+					"type": finding.type,
+					"soundValue": data['soundTemp']['value'],
+					"location":finding.type,
+					"idnum":finding.idnum
 				};
 				console.log('YES');
 				console.log(data['tempEnv']);
@@ -85,14 +94,14 @@ module.exports={
 
 		}
 		data['tempEnv']={
-			"Environment": req.params.name,
+			"Environment": "NO INFO",
 			"name": "NO INFO",
 			"type": "NO INFO",
-			"soundValue":req.params.sound,
-			"location":req.params.location,
+			"soundValue":data['soundTemp']['value'],
+			"location":"NO INFO",
 			"idnum":-1
 		};
-		
+		console.log("SHOOT!!! YOU SHOULD NOT BE HERE");
 		res.render('EditEnvironment',data);
 	},
 	editting: function(req,res){
@@ -138,11 +147,30 @@ module.exports={
 
 		}
 		//res.render("environment",data);
-		
+		data['soundTemp']['value']=50;
 		res.redirect('/environment');
 			
 		return;
 		
+	},
+	pickEnv: function(req,res){
+		console.log("SOUND TRANSMITTED");
+		//res.redirect('/environment');
+		if(String(req.query.environment).localeCompare(String("New"))==0){
+			res.redirect('/addEnv');
+			return;
+		}
+		else{
+			for(key in data['environment']){
+				console.log(data['environment'][key]['name']);
+				if(String(req.query.environment).localeCompare(String(data['environment'][key]['name']))==0){
+					res.redirect('/environment/edit/'+data['environment'][key]['idnum']);
+					return;
+				}
+			}
+		}
+		res.redirect('/soundtest');
+
 	}
 
 }

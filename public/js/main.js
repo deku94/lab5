@@ -138,7 +138,9 @@ function shutdown() {
         +"<p>You should be fine with speakers. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
     }
     $("#test-result-div").show();
-    $("#decibels").val(calculatedDecibels.toFixed(2));
+    $("#decibels").val(calculatedDecibels.toFixed(2),function(){
+        console.log('done');
+    });
     $("#submitBtn").show();
     if (meter != null) {
         meter.shutdown();
@@ -149,6 +151,7 @@ function shutdown() {
     $("#meter-div").hide();
     $("#sound-test").html("Test Noise Level");
     testingSound = false;
+    $.get('/soundtest/updateJSON/'+calculatedDecibels.toFixed(2));
 }
 
 function calculateDecibels() {
