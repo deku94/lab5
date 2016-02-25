@@ -9,7 +9,6 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializeCommunityPage() {
-    $('a[id|="link"]').click(confirmAndGo);
     $('#submitBtn').hide();
     console.log("Applied click function");
 }
