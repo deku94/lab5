@@ -37,7 +37,7 @@ function views(e){
 		n=e[key]['equipment'];
 		var temp=e[key];
 		//console.log(e[key]);
-		text=text+"<br>"+ "<h6>Place:"+temp['name']+"</h6>  Noise:"+temp['noise']+"<br>  Type of place:"+temp['type'];
+		text=text+"<br>"+ "<h4>Place:"+temp['name']+"</h4>  Noise:"+temp['noise']+"<br>  Type of place:"+temp['type'];
 		
 	}
 
