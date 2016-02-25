@@ -9,10 +9,13 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializeCommunityPage() {
-    $('#submitBtn').hide();
+    $("a[id|='link']").click(confirmAndGo);
     console.log("Applied click function");
 }
-function confirmAndGo(name, link) {
+function confirmAndGo(event) {
+    event.preventDefault();
+    var link = $(this).attr("href");
+    var name = $(this).data("name");
     console.log("Clicked a link");
     var ask = window.confirm("Do you want to leave Crescendo to "+ name + "?");
     if (ask) {
