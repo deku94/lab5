@@ -35,9 +35,7 @@ module.exports={
 
 		res.redirect('/environment');
 	},
-	addEnv : function(req, res) {    
-	// Your code goes here
-	
+	addEnv : function(req, res) {  
 		res.render('addEnvironment',data);
 	},
 	view :function(req,res){

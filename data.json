@@ -116,6 +116,17 @@
 	},
 	"soundTemp":{
 		"value":"50"
-	}
-
+	},
+    "communities": [
+        {
+            "name": "Head-Fi",
+            "url": "http://www.head-fi.org/",
+            "desc": "website for forums, buying guides, and reviews for audio equipment"
+        },
+        {
+            "name": "CNET",
+            "url": "http://www.cnet.com/topics/audio/",
+            "desc": "reviews on the newest audio equipment"
+        }
+    ]
 }

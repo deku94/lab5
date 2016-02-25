@@ -44,16 +44,19 @@ var WIDTH=500;
 var HEIGHT=50;
 var rafID = null;
 var testingSound = false;
+var canceled = false;
 var mediaStreamSource = null;
+var stopTest = null;
 function soundTest() {
     console.log("Clicked sound test button");
     if (testingSound == true) {
+        canceled = true;
         shutdown();
     } else {
         testingSound = true;
         $("#test-result-div").hide();
         $("#submitBtn").hide();
-        $("#sound-test").html("Testing...");
+        $("#sound-test").html("Cancel Test");
         $("#meter-div").show();
         // grab our canvas
         canvasContext =$("#meter")[0].getContext("2d");
@@ -107,7 +110,7 @@ function gotStream(stream) {
     mediaStreamSource.connect(meter);
 
     // kick off the visual updating
-    window.setTimeout(shutdown, 10000);
+    stopTest = window.setTimeout(shutdown, 7500);
     drawLoop();
 }
 
@@ -129,19 +132,27 @@ function drawLoop( time ) {
 }
 
 function shutdown() {
-    var calculatedDecibels = calculateDecibels();
-    if (calculatedDecibels >= 50) {
-        $("#test-details").html("<i class='fa fa-headphones fa-5x' style='position:relative; left:170px'></i>"
-        +"<p>You should probably wear headphones or use a less sensitive microphone. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
-    } else {
-        $("#test-details").html("<img style='width:5em; vertical-align:top' src='https://cdn1.iconfinder.com/data/icons/computer-hardware-4/512/audio_speakers-2-512.png'/>"
-        +"<p>You should be fine with speakers. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
+    if (!testingSound) {
+        canceled = false;
+        return;
     }
-    $("#test-result-div").show();
-    $("#decibels").val(calculatedDecibels.toFixed(2),function(){
-        console.log('done');
-    });
-    $("#submitBtn").show();
+    testingSound = false;
+    if (!canceled) {       
+        var calculatedDecibels = calculateDecibels();
+        if (calculatedDecibels >= 50) {
+            $("#test-details").html("<i class='fa fa-headphones fa-5x' style='position:relative; left:170px'></i>"
+            +"<p>You should probably wear headphones or use a less sensitive microphone. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
+        } else {
+            $("#test-details").html("<img style='width:5em; vertical-align:top' src='https://cdn1.iconfinder.com/data/icons/computer-hardware-4/512/audio_speakers-2-512.png'/>"
+            +"<p>You should be fine with speakers. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
+        }
+        $("#test-result-div").show();
+        $("#submitBtn").show();
+        $.get('/soundtest/updateJSON/'+calculatedDecibels.toFixed(2));
+    } else {
+        window.clearTimeout(stopTest);
+        canceled = false;
+    }
     if (meter != null) {
         meter.shutdown();
     }
@@ -150,8 +161,6 @@ function shutdown() {
     }
     $("#meter-div").hide();
     $("#sound-test").html("Test Noise Level");
-    testingSound = false;
-    $.get('/soundtest/updateJSON/'+calculatedDecibels.toFixed(2));
 }
 
 function calculateDecibels() {
@@ -166,14 +175,5 @@ function calculateDecibels() {
         
         console.log(avgDecibels);
         return avgDecibels;
-    }
-}
-
-function deletePost( name, link ) {
-    var ask = window.confirm("Do you want to leave Crescendo to "+ name + "?");
-    if (ask) {
-
-        document.location.href = link;
-
     }
 }
