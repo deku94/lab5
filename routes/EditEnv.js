@@ -35,19 +35,7 @@ module.exports={
 
 		res.redirect('/environment');
 	},
-	addEnv : function(req, res) {    
-	// Your code goes here
-<<<<<<< HEAD
-		console.log("ADD ENV");
-        var name = req.query.name || "";
-        var decibel = req.query.decibels || "50";
-        data["soundTestQuery"] = {
-            "name": name,
-            "soundValue": decibel
-        }
-=======
-	
->>>>>>> 573d98650362ba8f2661419454b7c32f3c6c2411
+	addEnv : function(req, res) {  
 		res.render('addEnvironment',data);
 	},
 	view :function(req,res){

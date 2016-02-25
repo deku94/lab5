@@ -9,7 +9,7 @@
         <script src="/js/jquery-1.11.0.js" type="text/javascript"></script>
         <script src="/js/bootstrap.js" type="text/javascript"></script>
 	    <script src="/js/volume-meter.js" type="text/javascript"></script>
-        <script src="/js/main.js" type="text/javascript"></script>
+        <script src="/js/soundtest_page.js" type="text/javascript"></script>
         <link rel="stylesheet" href="css/hci-friends.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-theme.css">
@@ -21,17 +21,12 @@
             <div>
                 <form id="environment"  action="/environment/pickEnv">
                     <h4>Current Environment</h4>
-<<<<<<< HEAD
-                    <select name="envName" form="environment">
-=======
                     <select name="environment">
->>>>>>> 573d98650362ba8f2661419454b7c32f3c6c2411
                         <option value='New'>New</option>
                         {{#each environment}}
                             <option value='{{name}}'>{{name}}</option>
                         {{/each}}
                     </select>
-                    <input id="decibels" name="decibels" type="hidden"></input>
                     <input id="submitBtn" type="submit" class="btn btn-primary btn-lg" id="save-results" value="Save to Environment"></input>
                 </form>
             </div>
@@ -46,8 +41,6 @@
                 <h4>Results</h4>
                 <div id="test-details">
                 </div>
-                
-                
             </div>
          </div>
 	</body>	
