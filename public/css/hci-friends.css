@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5 {
 	margin-bottom: 0px; 
 	text-align:center; 
 	font-size: 25px; 
-	color: #ffffff; 
+	color: #000000; 
 	font-family: Verdana
 }
 .form-label
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5 {
 	margin-bottom: 0px; 
 	text-align:left; 
 	font-size: 20px; 
-	color: #C0C0C0 ; 
+	color: #666666 ; 
 	font-family: Verdana
 }
 .box-subtitle
@@ -43,12 +43,13 @@ h1, h2, h3, h4, h5 {
 	text-align: left; 
 	padding-top: 0px; 
 	margin-top: 0px; 
+	color: #303030 ; 
 	font-size: 10px
 }
 .row-bottom-margin {
     	margin-bottom: 5px !important;
     	padding-bottom: 5px !important;
-    	background-color: #151515;
+    	background-color: #E0E0E0;
 		background-size: 100% auto ;
     }
 .box {
@@ -57,7 +58,7 @@ h1, h2, h3, h4, h5 {
 .row-bottom-margin-hidden
 {
 	margin-bottom: 0px; 
-	background-color:#333333; 
+	background-color:#D0D0D0; 
 	background-size: 100% auto ; 
 	padding-bottom: 0px;
 	overflow:hidden;
@@ -75,7 +76,7 @@ h1, h2, h3, h4, h5 {
 	margin-bottom: 0px; 
 	text-align:center; 
 	font-size: 25px; 
-	color: #ffffff; 
+	color: #00000; 
 	font-family: Verdana
 }
 .minibox-title
@@ -85,32 +86,32 @@ h1, h2, h3, h4, h5 {
 	margin-bottom: 0px; 
 	text-align:left; 
 	font-size: 23px; 
-	color: #ffffff; 
+	color: #000000; 
 	font-family: Arial
 }
 .community
 {
 	margin-bottom: 0px; 
-	background:url('http://cdn1.alexwisephotography.net/blog/wp-content/uploads/2008/08/img_0074.jpg') no-repeat center top scroll;
+	background:url('http://cdn.mysitemyway.com/etc-mysitemyway/backgrounds/legacy-previews/backgrounds/abstract-cloudy-sky/abstract-cloudy-sky-000454-glossy-white.jpg') no-repeat center top scroll;
 	background-size: 100% auto;
 	padding-bottom: 0px;
 }
 .equipment
 {
-	background:url('http://api.ning.com/files/kV4MbYiv7oTcpCSOxj6tf0vpTnpJE3*qRIzbNhbAC0g7vMsRAOrfHui2aRCG1xE13hInub1*6MA2y5H9lenabmy-6wimVcwp/1082061792.jpeg') no-repeat center top scroll;
+	background:url('https://0.s3.envato.com/files/68600727/Preview%20big.jpg') no-repeat center top scroll;
 	background-size: auto 100% ; 
-	border-right:2px solid #3f3f3f;
+	border-right:2px solid #B0B0B0;
 }
 .soundtest
 {
-	background:url('../musictest.jpg') no-repeat center top scroll;
+	background:url('http://www.extravectors.com/Vectors/MainImages/2011121911278.JPG') no-repeat center top scroll;
 	background-size: 100% auto;
 }
 .environment
 {
-	 background:url('http://4.bp.blogspot.com/-Kk7wBGgaQp8/T3mzOohTNsI/AAAAAAAAAtg/5TowdYXW67k/s1600/BlackandWhiteCityRiverbankWp-long+goodbye.png') no-repeat center top scroll;
+	 background:url('http://www.allvectors.com/wp-content/uploads/2012/06/abstract-white-background.jpg') no-repeat center top scroll;
 	background-size: auto 100% ; 
-	border-left:2px solid #3f3f3f;
+	border-left:2px solid #B0B0B0;
 }
 .minibox-btn
 {
@@ -128,11 +129,11 @@ h1, h2, h3, h4, h5 {
 	text-align:center; 
 	font-family: Verdana; 
 	font-size: 15px; 
-	color: #C0C0C0
+	color: #484848;
 }
 .inner {
     width: 50%;
     
     margin: 0 auto; 
 }
- .whiteicon {color:white;}
+ .whiteicon {color:#606060;}
