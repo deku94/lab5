@@ -67,6 +67,8 @@ module.exports={
 					"usage": data['equipment'][key]['usage'],
 					'idnum':data['equipment'][key]['idnum']	
 				};
+                console.log(data['tempEquip']);
+                console.log(data['equipment_types']);
 
 				//res.render('EditEquipment',data);
 				//return;
