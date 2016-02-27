@@ -103,7 +103,7 @@ app.get('/addEnv', EditEnv.addEnv);
 app.get('/addingEnv',EditEnv.addingEnv);
 app.get('/environment/view/:id',EditEnv.view);
 app.get('/environment/edit/:idnum',EditEnv.edit);
-app.get('/EdittingEnv/:original',EditEnv.editting);
+app.get('/EditingEnv/:original',EditEnv.editing);
 app.get('/environment/pickEnv',EditEnv.pickEnv);
 
 
@@ -111,7 +111,7 @@ app.get('/AddEquip',EditEquip.addEquipment);
 app.get('/AddingEquip',EditEquip.addingEquip);
 app.get('/equipment/view/:id',EditEquip.view);
 app.get('/equipment/edit/:id',EditEquip.editpage);
-app.get('/EdittingEquipment/:id',EditEquip.editting);
+app.get('/EditingEquipment/:id',EditEquip.editing);
 
 // Example route
 // app.get('/users', user.list);
