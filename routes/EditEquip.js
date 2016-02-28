@@ -84,8 +84,8 @@ module.exports={
 		};*/
 		res.render('EditEquipment',data);
 	},
-	editting : function(req,res){
-		console.log("WE ARE EDITTING NOW");
+	editing : function(req,res){
+		console.log("WE ARE EDITING NOW");
 		for(key in data['equipment']){
 			if(data['equipment'][key]['idnum']==req.params.id){
 				console.log('EQUIPMENT FOUND');

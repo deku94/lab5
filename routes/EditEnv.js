@@ -76,8 +76,8 @@ module.exports={
 					data['soundTemp']['value']=finding.soundValue;
 				}	
 				data['tempEnv']={
-					"Environment": finding.name,
-					"name": finding.equipment,
+					"name": finding.name,
+					"equipment": finding.equipment,
 					"type": finding.type,
 					"soundValue": data['soundTemp']['value'],
 					"location":finding.type,
@@ -102,7 +102,7 @@ module.exports={
 		console.log("SHOOT!!! YOU SHOULD NOT BE HERE");
 		res.render('EditEnvironment',data);
 	},
-	editting: function(req,res){
+	editing: function(req,res){
 		var finding=req.params.original;
 		var key;
 		var noise;
