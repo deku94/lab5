@@ -71,7 +71,7 @@ module.exports={
 		for(key in data.environment){
 
 			if(finding==data['environment'][key]['idnum'] ){
-				finding=data['environment'][key]
+				finding=data['environment'][key];
 				if(String(data['soundTemp']['value']).localeCompare('50')==0 ){
 					data['soundTemp']['value']=finding.soundValue;
 				}	
