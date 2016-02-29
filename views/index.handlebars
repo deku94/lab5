@@ -9,10 +9,12 @@
         
         <script src="/js/jquery-1.11.0.js" type="text/javascript"></script>
         <script src="/js/bootstrap.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="css/hci-friends.css">
+        <script src="/js/index.js" type="text/javascript"></script>
+        <script src="/js/overlay.js" type="text/javascript"></script>
+
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-theme.css">
-
+        <link rel="stylesheet" href="css/hci-friends.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -46,17 +48,102 @@
             </div>
         </nav>
         <div style="height:calc(100% - 55px)" class="container">
-            <div style="height:calc(100%/3) !important; padding-bottom:0% !important; padding-top:0%" class="row row-bottom-margin soundtest">
-                <div class="col-xs-12 text-center" style="top:50%; transform:translate(0, -50%)">
+  <div id="overlay-inAbox" class="overlay">
+    
+    <div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Indicators -->
+    
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <div class = "container" style = "margin-right: 35px; margin-left: 35px">
+          <div class = "row">
+            <img src = "http://icons.iconarchive.com/icons/svengraph/i-love/512/Headphones-icon.png" style = "max-width: 150px; margin-left:60px" alt = "headphones"></img>
+             <h3 style = "color: #000; text-align:center">add your equipment</h3>
+            <p style = "color: #000; text-align:left;padding-bottom:25px"> add your own headphones and speakers by going to "My Equipment"</p>
+                       
+
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+      <div class = "container" style = "margin-right: 35px; margin-left: 35px">
+          <div class = "row">
+             <img src = "http://icons.iconseeker.com/png/fullsize/be-dj/turntable.png" style = "max-width: 150px; margin-left:60px" alt = "headphones"></img>
+             <h3 style = "color: #000; text-align:center">entering the sound test</h3>
+            <p style = "color: #000; text-align:left;padding-bottom:25px"> enter the sound testing page by pressing "Start Sound Test" </p>
+
+          </div>
+        </div>
+      </div>
+    
+      <div class="item">
+       <div class = "container" style = "margin-right: 35px; margin-left: 35px">
+          <div class = "row">
+             <img src = "speaker.png" style = "max-width: 150px; margin-left:60px" alt = "headphones"></img>
+             <h3 style = "color: #000; text-align:center">starting the sound test</h3>
+            <p style = "color: #000; text-align:left;padding-bottom:25px"> press the "Test Noise Level" on the testing page to begin the test for 7.5 seconds </p>
+
+          </div>
+        </div>
+      </div>
+      <div class="item">
+       <div class = "container" style = "margin-right: 35px; margin-left: 35px">
+          <div class = "row">
+             <img src = "http://icons.iconarchive.com/icons/artua/mac/512/Home-icon.png" style = "max-width: 150px; margin-left:60px" alt = "headphones"></img>
+             <h3 style = "color: #000; text-align:center">add new environment</h3>
+            <p style = "color: #000; text-align:left"> press "Save to Environment" and enter the details of your environment in the next screen </p>
+
+          </div>
+        </div>
+      </div>
+      <div class="item">
+       <div class = "container" style = "margin-right: 35px; margin-left: 35px">
+          <div class = "row">
+             <img src = "http://icons.iconarchive.com/icons/aha-soft/standard-city/256/university-icon.png" style = "max-width: 150px; margin-left:60px" alt = "headphones"></img>
+            <h3 style = "color: #000; text-align:center">view your environment</h3>
+            <p style = "color: #000; text-align:left;"> you can view your saved environments by press "View Environments" on the home screen</p>
+                        
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+  <div class = "row text-center">
+    <span class = "btn btn-default" style = "margin-bottom: 25px" onclick="closeOverlay()">Close</span>
+  </div>
+</div>
+<!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left whiteicon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right whiteicon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+        
+            <div id = "soundtest" style="height:calc(100%/3) !important; padding-bottom:0% !important; padding-top:0%; display:none;" class="row row-bottom-margin soundtest" >
+                <div  class="col-xs-12 text-center" style="top:50%; transform:translate(0, -50%)">
                     <div>
                         <h1 style="margin-top:0%" class="index-center-title">Sound Test</h1>
                         <p class="index-center-subtitle">test your soundscape.</p>
+                              <span onclick = "openOverlay('#overlay-inAbox')" id="overlaylaunch-inAbox" class = "btn btn-primary">Tutorial</span>
+
                         <a style="padding: 5px; margin-bottom: 20px; margin-top: 10px; text-align: center; margin: auto;" class="btn btn-info" href="/soundtest">Start Sound Test</a>
                     </div>
                 </div>
             </div>
-            <div style="padding-top:0%; padding-bottom:0% !important; height:calc(100%/3)" class="row row-bottom-margin">
-                <div style="height:100%" class="col-xs-6 text-center equipment">
+            <div style="padding-top:0%; padding-bottom:0% !important; height:calc(100%/3); background-color:#3f3f3f;" class="row row-bottom-margin">
+                <div id = "equipment" style="height:100%;display:none;" class="col-xs-6 text-center equipment">
                     <div style="top:50%; transform:translate(0, -50%)" class="col-xs-12 text-center">
                         <div>
                         <h1 style="margin-top:0%;padding-top:0%" class="minibox-title">My equipment</h1>
@@ -66,8 +153,8 @@
                         </div>
                     </div>
                 </div>
-                <div style="height:100%" class="col-xs-6 text-center environment">
-                    <div style="top:50%; transform:translate(0, -50%)" class="col-xs-12">
+                <div id = "environments" style="height:100%;display:none;" class="col-xs-6 text-center environment">
+                    <div  style="top:50%; transform:translate(0, -50%);" class="col-xs-12">
                         <div>
                         <h1 style="margin-top:0%;padding-top:0%" class="minibox-title">My environments</h1>
 
@@ -77,8 +164,8 @@
                     </div>
                 </div>
             </div>
-            <div style="height:calc(100%/3);padding-top:0%;padding-bottom:0%;margin-bottom:0% !important" class="row row-bottom-margin community">
-                <div class="col-xs-12 text-center" style="top:50%; transform:translate(0, -50%)">
+            <div id = "community" style="height:calc(100%/3);padding-top:0%;padding-bottom:0%;margin-bottom:0% !important; display:none" class="row row-bottom-margin community">
+                <div  class="col-xs-12 text-center" style="top:50%; transform:translate(0, -50%)">
                     <div>
                         <h1 style="margin-top:0%" class="index-center-title">community</h1>
                         <p class="index-center-subtitle">keep updated with the newest gear</p>
