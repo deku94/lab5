@@ -89,6 +89,12 @@ h1, h2, h3, h4, h5 {
 	font-family: 'Roboto';
 	font-weight: 200;
 }
+.tile-content
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
 .community
 {
 	margin-bottom: 0px !important;
