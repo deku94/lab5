@@ -59,6 +59,21 @@ h1, h2, h3, h4, h5 {
     padding-top: 0px !important;
     margin-bottom: 5px;
 }
+.row-bottom-margin {
+    	margin-bottom: 5px !important;
+    	padding-bottom: 5px !important;
+    	background-color: #151515;
+		background-size: 100% auto ;
+    }
+.row-bottom-margin-hidden
+{
+	margin-bottom: 0px; 
+	background-color:#333333; 
+	background-size: 100% auto ; 
+	padding-bottom: 0px;
+	overflow:hidden;
+	display:none
+}
 .changeable-hide
 {
     display: none;
