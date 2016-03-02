@@ -27,14 +27,13 @@ SOFTWARE.
 $(document).ready(function() {
 	initializeSoundPage();
     console.log("Initialized page");
-})
+});
 
 /*
  * Function that is called when the document is ready.
  */
 function initializeSoundPage() {
     $('#sound-test').click(soundTest);
-    $('#submitBtn').hide();
     $('#environment').submit(collectData);
     console.log("Applied click function");
 }
@@ -53,9 +52,17 @@ var savedResultsTime = null;
 function collectData(e) {
     e.preventDefault();
     var savedResultsTime = window.performance.now();
-    var time = savedResultsTime - finishedTestTime;
+    var time = Math.round(savedResultsTime - finishedTestTime);
     console.log("Sending time: " + time);
-    ga('send', 'timing', 'Page layout timings', 'soundtest-to-save', time);
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Saved Soundtest Results',
+        eventAction: 'saved',
+        eventValue: time,
+        hitCallback: function() {
+            console.log("Submitting");
+            e.currentTarget.submit();
+        }});
 }
 function soundTest() {
     console.log("Clicked sound test button");

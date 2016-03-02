@@ -3,7 +3,7 @@
 $(document).ready(function() {
 	initializeCommunityPage();
     console.log("Initialized page");
-})
+});
 
 /*
  * Function that is called when the document is ready.
