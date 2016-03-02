@@ -95,7 +95,8 @@ app.get('/about', about.view);
 app.get('/help', help.view);
 app.get('/community', community.view);
 app.get('/environment', environment.view);
-app.get('/soundtest', soundtest.view);
+app.get('/soundtest', soundtest.view_a);
+app.get('/soundtest_b', soundtest.view_b);
 
 app.get('/soundtest/updateJSON/:value',soundtest.updateJSON);
 
