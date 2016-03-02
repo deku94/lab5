@@ -35,6 +35,7 @@ $(document).ready(function() {
 function initializeSoundPage() {
     $('#sound-test').click(soundTest);
     $('#submitBtn').hide();
+    $('#environment').submit(collectData);
     console.log("Applied click function");
 }
 var audioContext = null;
@@ -47,6 +48,15 @@ var testingSound = false;
 var canceled = false;
 var mediaStreamSource = null;
 var stopTest = null;
+var finishedTestTime = null;
+var savedResultsTime = null;
+function collectData(e) {
+    e.preventDefault();
+    var savedResultsTime = window.performance.now();
+    var time = savedResultsTime - finishedTestTime;
+    console.log("Sending time: " + time);
+    ga('send', 'timing', 'Page layout timings', 'soundtest-to-save', time);
+}
 function soundTest() {
     console.log("Clicked sound test button");
     if (testingSound == true) {
@@ -148,6 +158,7 @@ function shutdown() {
         }
         $("#test-result-div").show();
         $("#submitBtn").show();
+        finishedTestTime = window.performance.now();
         $.get('/soundtest/updateJSON/'+calculatedDecibels.toFixed(2));
     } else {
         window.clearTimeout(stopTest);
