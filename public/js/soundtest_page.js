@@ -36,6 +36,11 @@ function initializeSoundPage() {
     $('#sound-test').click(soundTest);
     $('#environment').submit(collectData);
     console.log("Applied click function");
+    var userAgent = window.navigator.userAgent;
+    if (userAgent.search("Chrome") > -1) {
+        console.log("Switching to https://");
+        location.protocol = "https:";
+    }
 }
 var audioContext = null;
 var meter = null;
@@ -156,17 +161,20 @@ function shutdown() {
     testingSound = false;
     if (!canceled) {       
         var calculatedDecibels = calculateDecibels();
-        if (calculatedDecibels >= 50) {
-            $("#test-details").html("<i class='fa fa-headphones fa-5x' style='position:relative; left:170px'></i>"
-            +"<p>You should probably wear headphones or use a less sensitive microphone. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
-        } else {
-            $("#test-details").html("<img style='width:5em; vertical-align:top' src='https://cdn1.iconfinder.com/data/icons/computer-hardware-4/512/audio_speakers-2-512.png'/>"
-            +"<p>You should be fine with speakers. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
+        if (calculatedDecibels) {
+            if (calculatedDecibels >= 50) {
+                $("#test-details").html("<i class='fa fa-headphones fa-5x' style='position:relative; left:170px'></i>"
+                +"<p>You should probably wear headphones or use a less sensitive microphone. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
+            } else {
+                $("#test-details").html("<img style='width:5em; vertical-align:top' src='https://cdn1.iconfinder.com/data/icons/computer-hardware-4/512/audio_speakers-2-512.png'/>"
+                +"<p>You should be fine with speakers. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
+            }
+   
+            $("#test-result-div").show();
+            $("#submitBtn").show();
+            finishedTestTime = window.performance.now();
+            $.get('/soundtest/updateJSON/'+calculatedDecibels.toFixed(2));
         }
-        $("#test-result-div").show();
-        $("#submitBtn").show();
-        finishedTestTime = window.performance.now();
-        $.get('/soundtest/updateJSON/'+calculatedDecibels.toFixed(2));
     } else {
         window.clearTimeout(stopTest);
         canceled = false;
