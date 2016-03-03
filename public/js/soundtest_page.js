@@ -38,8 +38,10 @@ function initializeSoundPage() {
     console.log("Applied click function");
     var userAgent = window.navigator.userAgent;
     if (userAgent.search("Chrome") > -1) {
-        console.log("Switching to https://");
-        location.protocol = "https:";
+        if (location.protocol != "https:") {
+            console.log("Switching to https://");
+            location.protocol = "https:";
+        }
     }
 }
 var audioContext = null;
