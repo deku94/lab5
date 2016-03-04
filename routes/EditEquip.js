@@ -28,7 +28,7 @@ module.exports={
 		var temp = {
             "envs" : [],
             "found" : 0
-        }
+        };
 		for(key in data.environment){
 			//console.log(data['environment'][key]['equipment']);
 			if(finding.localeCompare(String(data['environment'][key]['equipment']))==0){

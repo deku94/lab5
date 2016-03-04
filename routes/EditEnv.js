@@ -2,8 +2,23 @@ var data = require("../data.json");
 var index=6;
 module.exports={
 	addingEnv : function(req, res) {
-	
+		console.log(req.query.hiddenTxt);
 		var noise;
+		var tempEQUIP=[];
+		var key;
+		var reqArray=JSON.parse(req.query.hiddenTxt);
+		for(key in reqArray){
+			console.log(reqArray[key]);
+			var index;
+			for(index in data['equipment']){
+				if(data['equipment'][index]['idnum']==reqArray[key]){
+					console.log("FOUND");
+					tempEQUIP.push(data['equipment'][index]['name']);
+					break;
+				}
+			}
+
+		}
 		if(req.query.points<1/3*100){
 			noise='quiet';
 		}
@@ -23,7 +38,7 @@ module.exports={
 		data["environment"].push({
 
 			"name": req.query.name,
-			"equipment": String(req.query.equip),
+			"equipment": tempEQUIP,
 			"noise": noise,
 			"type": req.query.place,
 			"soundValue":req.query.points,
@@ -44,20 +59,36 @@ module.exports={
 		var finding=String(req.params.id);
 		var total;
 		var key;
-		for(key in data.equipment){
-
-			if(finding.localeCompare(String(data['equipment'][key]['name']))==0){
-				console.log(data['equipment'][key]);
-				res.json(data['equipment'][key]);
-				return;
+		var ourId=0;
+		var temp = {
+            "equip" : [],
+            "found" : 0,
+            'OGID':finding
+        };
+		for (ourId in data.environment){
+			if(finding==data['environment'][ourId]['idnum'] ){
+				temp.found=1;
+				break;
 			}
-
 		}
-		res.json({
-			"name": String(req.params.id),
-			"type": "NO INFO",
-			"usage": "NO INFO"
-		});
+		finding=data['environment'][ourId]['equipment'];
+		if(temp.found==1){
+			for (ourId in finding){	
+				for(key in data.equipment){
+
+					if(finding[ourId].localeCompare(String(data['equipment'][key]['name']))==0){
+						//console.log(data['equipment'][key]);
+						temp['equip'].push(data['equipment'][key]);
+						
+					}
+
+				}
+			}
+			//console.log(temp);
+			res.json(temp);
+			return;
+		}
+		
 		
 	},
 	edit: function(req,res){
@@ -168,6 +199,11 @@ module.exports={
 			}
 		}
 		res.redirect('/soundtest');
+
+	},
+	tempEnv: function(req,res){
+		console.log("MAKEING TEMPS");
+		console.log(req.query.checkbox0);
 
 	}
 

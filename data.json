@@ -2,7 +2,10 @@
 	"environment": [
 		{
 			"name": "Home",
-			"equipment": "Senheiser 2",
+			"equipment": [
+				"Senheiser 2",
+				"Apple Earpods"
+			],
 			"noise": "quiet",
 			"type": "home",
 			"soundValue": "33",		
@@ -10,7 +13,7 @@
 		},
 		{
 			"name": "Bus",
-			"equipment": "Apple Earpods",
+			"equipment": ["Apple Earpods"],
 			"noise": "loud",
 			"type": "bus",
 			"soundValue": "100",
@@ -18,7 +21,9 @@
 		},
 		{
 			"name": "Work",
-			"equipment": "PDX-510",
+			"equipment": [
+				"PDX-510"
+			],
 			"noise": "medium",
 			"type": "building",
 			"soundValue": "66",
@@ -26,7 +31,9 @@
 		},
 		{
 			"name": "Room",
-			"equipment": "HX-200",
+			"equipment": [
+				"HX-200"
+			],
 			"noise": "quiet",
 			"type": "home",
 			"soundValue": "33",
@@ -34,7 +41,9 @@
 		},
 		{
 			"name": "Dorm",
-			"equipment": "PDX-510",
+			"equipment": [
+				"PDX-510"
+			],
 			"noise": "medium",
 			"type": "home",
 			"soundValue": "66",
@@ -42,7 +51,9 @@
 		},
 		{
 			"name": "Campus",
-			"equipment": "DPS-2510",
+			"equipment": [
+				"DPS-2510"
+			],
 			"noise": "loud",
 			"type": "university",
 			"soundValue": "100",

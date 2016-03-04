@@ -25,6 +25,12 @@
     <body>
         {{> navbarsPartials}}
         <div class = "container" >	
+            <a href="/addEquip">
+                <div class="row row-bottom-margin">
+                    <center><i class="fa fa-plus-circle fa-2x whiteicon "></i></center>
+        
+                </div>
+            </a>  
             {{#each equipment}}
 
                 <div class="row row-bottom-margin listing" style = "background-color: #151515">
@@ -51,12 +57,7 @@
                     <a href="/equipment/edit/{{idnum}}" style="color:#ffffff"><span style="float:right;margin-right:4%"><i id="{{idnum}}Edit" class="fa fa-pencil fa-2x whiteicon"></i>EDIT EQUIPMENT</span></a> 
                 </div>
             {{/each}}
-            <a href="/addEquip">
-                <div class="row row-bottom-margin">
-        <center><i class="fa fa-plus-circle fa-2x whiteicon "></i></center>
-        
-      </div>
-            </a>  	
+            	
         </div>
     </body>
     <script type="text/javascript">

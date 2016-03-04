@@ -16,7 +16,7 @@ function initializePage() {
 function extendTab(event){
 	event.preventDefault();
 	var link=($(this).next()).attr('id');
-
+	console.log(link);
 	var icon=$(this).find('#dir');
 	//$(this).css("background-color","red");
 	$(this).next().slideToggle( "slow" );
@@ -31,12 +31,17 @@ function extendTab(event){
 
 }
 function views(e){
-	console.log(e);
-	var n=e['name'];
-	//console.log($( "[id="+n+"]"+' div div span'));
-	var text="Equipment:" + e['name']+"<br>Type:"+e['type']+"<br>Usage:"+e['usage'];
-	$("[id='"+n+"']"+' div div span p').html(text);
-
+	//console.log("VIEWS");
+	var key;
+	for(key in e['equip']){
+		//console.log(e['equip'][key]);
+		var n=e['OGID'];
+		var abbr=e['equip'][key];
+		//console.log($( "[id="+n+"]"+' div div span'));
+		var text="Equipment:" + abbr['name']+"<br>Type:"+abbr['type']+"<br>Usage:"+abbr['usage'];
+		$("[id='"+n+"']"+' div div span p').html(text);
+	}
+	return;
 
 }
 /*
@@ -46,3 +51,5 @@ For now. I'll deal with styling and standardizing CSS when I get back
 Associated environments
 Name of equipment
 */
+
+

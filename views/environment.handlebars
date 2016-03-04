@@ -26,39 +26,43 @@
 	{{> navbarsPartials}}
   <div class = "container" >
 
-
-    {{#each environment}}
-    <div class="row row-bottom-margin listing" style = "background-color: #151515;">
-      <div class="col-xs-8" style = "max-height: 125px">
-        <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
-          <i class="fa fa-{{type}} fa-2x whiteicon"></i>
-          <span class = "box-title"> {{name}}
-           <p class = "box-subtitle">{{equipment}} - {{noise}} </p></span>    
-        </div>
-
-
-      </div>
-      <i id="dir" class="fa fa-sort-desc fa-2x whiteicon" style="float:right;margin-right:4%"></i>
-    </div>
-    <div class='row row-bottom-margin row-bottom-margin-hidden' id='{{equipment}}'>
-      <div style = "max-height: 125px; padding-left: 10px">
-        <div class = "col-cust-padding" > <!--Changed padding top to 2 and paddint bottom to 15-->
-          <i class="fa fa-{{type}} fa-2x whiteicon"></i>
-          <span class = "box-title"> Equipment for {{name}}
-           <p class = "box-subtitle"></p></span>
-         
-        
-        </div>
-      </div>
-      <a href="/environment/edit/{{idnum}}" style="color:#ffffff"><span style="float:right;margin-right:4%"><i id="{{idnum}}Edit" class="fa fa-pencil fa-2x whiteicon"></i>EDIT ENVIRONMENT</span></a> 
-    </div>
-    {{/each}}
     <a href="/addEnv">
       <div class="row row-bottom-margin">
         <center><i class="fa fa-plus-circle fa-2x whiteicon "></i></center>
         
       </div>
-    </a>  
+    </a> 
+    {{#each environment}}
+      <div class="row row-bottom-margin listing" style = "background-color: #151515;">
+        <div class="col-xs-8" style = "max-height: 125px">
+          <div style = "padding-top: 2%; padding-bottom: 15%" > <!--Changed padding top to 2 and paddint bottom to 15-->
+            <i class="fa fa-{{type}} fa-2x whiteicon"></i>
+            <span class = "box-title"> {{name}}
+             <p class = "box-subtitle">{{equipment}} - {{noise}} </p></span>    
+          </div>
+
+
+        </div>
+        <i id="dir" class="fa fa-sort-desc fa-2x whiteicon" style="float:right;margin-right:4%"></i>
+      </div>
+
+      <div class='row row-bottom-margin row-bottom-margin-hidden' id='{{idnum}}'>
+        <div style = "max-height: 125px; padding-left: 10px">
+          <div class = "col-cust-padding" > <!--Changed padding top to 2 and paddint bottom to 15-->
+            <i class="fa fa-{{type}} fa-2x whiteicon"></i>
+            <span class = "box-title"> Equipment for {{name}}
+              {{#each equipment}}
+                <p class = "box-subtitle"></p>
+              {{/each}}
+           </span>
+           
+          
+          </div>
+        </div>
+        <a href="/environment/edit/{{idnum}}" style="color:#ffffff"><span style="float:right;margin-right:4%"><i id="{{idnum}}Edit" class="fa fa-pencil fa-2x whiteicon"></i>EDIT ENVIRONMENT</span></a> 
+      </div>
+    {{/each}}
+     
     	
   	
   </div>
