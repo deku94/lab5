@@ -106,7 +106,7 @@ app.get('/environment/view/:id',EditEnv.view);
 app.get('/environment/edit/:idnum',EditEnv.edit);
 app.get('/EditingEnv/:original',EditEnv.editing);
 app.get('/environment/pickEnv',EditEnv.pickEnv);
-app.get('/environment/tempEnv',EditEnv.tempEnv);
+
 
 
 app.get('/AddEquip',EditEquip.addEquipment);

@@ -92,7 +92,7 @@
 						          
 						        </div>
 						        <div class="modal-footer">
-						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						          <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
 						        </div>
 						      </div>
 						    </div>
@@ -146,10 +146,20 @@
 		var value = $(this).val(); 
 		var hiddenVal = $('#hiddenTxt').val(); 
 		var object=JSON.parse(hiddenVal);
+		var key;
+		for(key in object){
+			if(object[key]==value){
+				delete object[key];		
+				var string=JSON.stringify(object);
+				$('#hiddenTxt').val(string);
+				console.log(string);
+				return;
+			}
+		}
 		object['checkbox'+value]=value;
 		var string=JSON.stringify(object);
 		$('#hiddenTxt').val(string);
-		console.log(string);
+		//console.log(string);
 	});
 
 </script>

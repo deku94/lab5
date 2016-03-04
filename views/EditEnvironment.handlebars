@@ -64,15 +64,15 @@
                         <br>
                 
 
-                        <form style = "padding-left: 10px" id="AddingEquip" action="/EditingEnv/{{tempEnv.idnum}}">
+                        <form style = "padding-left: 10px" id="EditingEquip" action="/EditingEnv/{{tempEnv.idnum}}">
 
                             <div class="form-group">
                                 <label class = "form-label" for="name"> Name of Environment </label>
                                 <input style="width:70%; overflow:hidden" id="name" name="name" value="{{tempEnv.name}}"></input>
-                            
+                                <textarea style="width:70%; height:30px; overflow:hidden" id="hiddenTxt" name="hiddenTxt">{{tempEnv.str}}</textarea>
                             </div>
                         <div class = "form-group">
-
+                            <!--
                             <label class = "form-label" or="equip">Select Gear</label>
                             <select id="equip" name="equip"  data-native-menu="false">
                                 {{#each equipment}}
@@ -82,7 +82,32 @@
                                         <option value='{{name}}'>{{name}}</option>
                                     {{/compare}}
                                 {{/each}}
-                            </select>
+                            </select>-->
+                            <button type="button" class="btn btn-lg btn-default" data-toggle="modal" data-target="#myModal">Choose Equipment</button>
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog modal-lg">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <h4 class="modal-title">Choose Equipment</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      
+                                     {{#each tempEnv.equipment}}
+                                        {{#if exist}}
+                                            <input class="equipCHK" type="checkbox" name="checkbox{{idnum}}" value="{{idnum}}" checked>{{name}}<br>
+                                        {{else}}
+                                            <input class="equipCHK" type="checkbox" name="checkbox{{idnum}}" value="{{idnum}}">{{name}}<br>
+                                        {{/if}}
+                                     {{/each}}
+                                      
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                         </div>
                         <div class = "form-group">
                             <!-- IMPLEMENT SOUND TESTER INSTEAD-->
@@ -126,4 +151,33 @@
       $("#environment-nav").addClass("active");
       $("nav div.container-fluid div.navbar-header").append("<a class='navbar-brand' style = 'font-family: Arial' href='#'>Environment</a>");
     </script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('#hiddenTxt').hide();
+        
+    })
+</script>
+
+<script type="text/javascript">
+    $('.equipCHK').click(function(){
+        var value = $(this).val(); 
+        var hiddenVal = $('#hiddenTxt').val(); 
+        var object=JSON.parse(hiddenVal);
+        var key;
+        for(key in object){
+            if(object[key]==value){
+                delete object[key];     
+                var string=JSON.stringify(object);
+                $('#hiddenTxt').val(string);
+                console.log(string);
+                return;
+            }
+        }
+        object['checkbox'+value]=value;
+        var string=JSON.stringify(object);
+        $('#hiddenTxt').val(string);
+        //console.log(string);
+    });
+
+</script>
 </html>

@@ -2,18 +2,18 @@ var data = require("../data.json");
 var index=6;
 module.exports={
 	addingEnv : function(req, res) {
-		console.log(req.query.hiddenTxt);
+		//console.log(req.query.hiddenTxt);
 		var noise;
 		var tempEQUIP=[];
 		var key;
 		var reqArray=JSON.parse(req.query.hiddenTxt);
 		for(key in reqArray){
-			console.log(reqArray[key]);
-			var index;
-			for(index in data['equipment']){
-				if(data['equipment'][index]['idnum']==reqArray[key]){
-					console.log("FOUND");
-					tempEQUIP.push(data['equipment'][index]['name']);
+			//console.log(reqArray[key]);
+			var i;
+			for(i in data['equipment']){
+				if(data['equipment'][i]['idnum']==reqArray[key]){
+					//console.log("FOUND");
+					tempEQUIP.push(data['equipment'][i]['name']);
 					break;
 				}
 			}
@@ -30,7 +30,7 @@ module.exports={
 		}
 		for (key in data['environment']){
 			if(String(data['environment'][key]['name']).localeCompare(String(req.query.name))==0){
-				console.log("MATCH");
+				//console.log("MATCH");
 				res.redirect('/environment');
 				return;
 			}
@@ -54,8 +54,8 @@ module.exports={
 		res.render('addEnvironment',data);
 	},
 	view :function(req,res){
-		console.log("YES");
-		console.log(req.params.id);
+		//console.log("YES");
+		//console.log(req.params.id);
 		var finding=String(req.params.id);
 		var total;
 		var key;
@@ -79,7 +79,7 @@ module.exports={
 					if(finding[ourId].localeCompare(String(data['equipment'][key]['name']))==0){
 						//console.log(data['equipment'][key]);
 						temp['equip'].push(data['equipment'][key]);
-						
+						break;
 					}
 
 				}
@@ -92,30 +92,58 @@ module.exports={
 		
 	},
 	edit: function(req,res){
-		console.log("EDIT ");
+		//console.log("EDIT ");
 		var finding=req.params.idnum;
 		var equip= String(req.params.equip);
 		var total;
 		var key;
-		
-		
+		var items=[];
+		var strToSend={};
 		for(key in data.environment){
 
 			if(finding==data['environment'][key]['idnum'] ){
 				finding=data['environment'][key];
 				if(String(data['soundTemp']['value']).localeCompare('50')==0 ){
 					data['soundTemp']['value']=finding.soundValue;
-				}	
+				}
+				var index=0;
+				var j;
+				for(j in data['equipment']){
+					
+					if(String(data['equipment'][j]['name']).localeCompare(String(finding['equipment'][index]))==0){
+						index++;
+						var temp="checkbox"+String(data['equipment'][j]['idnum']);
+						console.log(temp);
+						strToSend[temp]=data['equipment'][j]['idnum'];
+
+						items[j]={
+							'name':data['equipment'][j]['name'],
+							'exist':true,
+							'idnum':data['equipment'][j]['idnum']
+						}
+					}
+					else{
+						items[j]={
+							'name':data['equipment'][j]['name'],
+							'exist':false,
+							'idnum':data['equipment'][j]['idnum']
+						}
+					}
+				}
+				var str=JSON.stringify(strToSend);
+				console.log(str);
+				//console.log(finding.equipment);	
 				data['tempEnv']={
 					"name": finding.name,
-					"equipment": finding.equipment,
+					"equipment": items,
 					"type": finding.type,
 					"soundValue": data['soundTemp']['value'],
 					"location":finding.type,
-					"idnum":finding.idnum
+					"idnum":finding.idnum,
+					"str":str
 				};
-				console.log('YES');
-				console.log(data['tempEnv']);
+				//console.log('YES');
+				//console.log(data['tempEnv']);
 				res.render('EditEnvironment',data);
 				return;
 			}
@@ -130,7 +158,7 @@ module.exports={
 			"location":"NO INFO",
 			"idnum":-1
 		};
-		console.log("SHOOT!!! YOU SHOULD NOT BE HERE");
+		//console.log("SHOOT!!! YOU SHOULD NOT BE HERE");
 		res.render('EditEnvironment',data);
 	},
 	editing: function(req,res){
@@ -138,12 +166,25 @@ module.exports={
 		var key;
 		var noise;
 		//console.log('BEGINEDIT');
-		//console.log(finding);
-		
+		//console.log(finding);		
+		var tempEQUIP=[];
+		var reqArray=JSON.parse(req.query.hiddenTxt);
+		for(key in reqArray){
+			//console.log(reqArray[key]);
+			var i;
+			for(i in data['equipment']){
+				if(data['equipment'][i]['idnum']==reqArray[key]){
+					//console.log("FOUND");
+					tempEQUIP.push(data['equipment'][i]['name']);
+					break;
+				}
+			}
+
+		}
 		for(key in data.environment){
 
 			if(String(finding).localeCompare(String(data['environment'][key]['idnum']))==0){
-				console.log(data['equipment'][key]);
+				//console.log(data['equipment'][key]);
 				if((String(req.query.button)).localeCompare("DELETE")==0){
 					delete data['environment'][key];
 					
@@ -163,7 +204,7 @@ module.exports={
 					}
 					
 					data["environment"][key].name=req.query.name;
-					data["environment"][key].equipment=req.query.equip;
+					data["environment"][key].equipment=tempEQUIP;
 					data["environment"][key].noise=noise;
 					data["environment"][key].type=req.query.place;
 					data["environment"][key].soundValue=req.query.points;
@@ -183,7 +224,7 @@ module.exports={
 		
 	},
 	pickEnv: function(req,res){
-		console.log("SOUND TRANSMITTED");
+		//console.log("SOUND TRANSMITTED");
 		//res.redirect('/environment');
 		if(String(req.query.environment).localeCompare(String("New"))==0){
 			res.redirect('/addEnv');
@@ -191,7 +232,7 @@ module.exports={
 		}
 		else{
 			for(key in data['environment']){
-				console.log(data['environment'][key]['name']);
+				//console.log(data['environment'][key]['name']);
 				if(String(req.query.environment).localeCompare(String(data['environment'][key]['name']))==0){
 					res.redirect('/environment/edit/'+data['environment'][key]['idnum']);
 					return;
@@ -199,11 +240,6 @@ module.exports={
 			}
 		}
 		res.redirect('/soundtest');
-
-	},
-	tempEnv: function(req,res){
-		console.log("MAKEING TEMPS");
-		console.log(req.query.checkbox0);
 
 	}
 
