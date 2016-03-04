@@ -5,15 +5,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        {{> googleAnalytics}}
         <script src="/js/jquery-1.11.0.js" type="text/javascript"></script>
         <script src="/js/bootstrap.js" type="text/javascript"></script>
 	    <script src="/js/volume-meter.js" type="text/javascript"></script>
+        {{> timeExperiment}}
+        {{> googleAnalytics}}
         <script src="/js/soundtest_page.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/hci-friends.css">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/hci-friends.css">
 	</head>	
 	<body>
         {{> navbarsPartials}}
@@ -41,7 +42,7 @@
                             <button type="button" class="btn btn-primary btn-lg" id="sound-test" style="margin-left:5%; vertical-align:75%">Start Test</button>
                         </div>
                     {{else}}
-                        <input id="submitBtn" type="submit" class="btn btn-primary btn-lg" id="save-results" value="Save to Environment"></input>
+                        <input id="submitBtn" type="submit" class="btn btn-primary btn-lg changeable-hide" id="save-results" value="Save to Environment"></input>
                         <div style="padding-top: 10%">
                             <i class="fa fa-volume-up fa-5x"></i>
                             <button type="button" class="btn btn-primary btn-lg" id="sound-test" style="margin-left:5%; vertical-align:75%">Test Noise Level</button>
@@ -55,7 +56,7 @@
                         <div id="test-details">
                         </div>
                         {{#if showAlternative}}
-                            <input id="submitBtn" type="submit" class="btn btn-success btn-lg" id="save-results" value="Save to Environment"></input>
+                            <input id="submitBtn" type="submit" class="changeable-hide btn btn-success btn-lg" id="save-results" value="Save to Environment"></input>
                         {{/if}}
                     </div>
                 </form>

@@ -2,7 +2,7 @@
 
 <html style="height: 100%; overflow-y:hidden">
     <head>
-        <title>Home</title>	
+        <title>Home</title> 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width; height=device-height; initial-scale=1.0; user-scalable=no">
 
@@ -11,6 +11,7 @@
         <script src="/js/bootstrap.js" type="text/javascript"></script>
         <script src="/js/index.js" type="text/javascript"></script>
         <script src="/js/overlay.js" type="text/javascript"></script>
+        {{> googleAnalytics}}
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:400,300‌​,700,500,100' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-theme.css">
@@ -105,7 +106,7 @@
             </div>
 
             <!-- Sound Test tile -->
-            <div id="soundtest" class="row row-partition-3-bottom-margin soundtest changeable-hide" >
+            <div id="soundtest" class="row row-partition-3-bottom-margin soundtest " >
                 <div  class="col-xs-12 text-center full">
                     <div class="tile-content">
                         <h1 style="margin-top:0%" class="index-center-title">Sound Test</h1>
@@ -154,10 +155,10 @@
         </div>
         <div style="border: 0px; background-image: linear-gradient(to bottom, #3f3f3f 100%, #3f3f3f 100%); margin-bottom: 0px; margin-top: 0px; height: 40px">
             <div id="help" style="float: left; padding-left: 5%; top:15%; position:relative;">
-                <a href="/help">Need Help?</a>
+                <a href="/help" style = "text-decoration:none; color: #fff">Need Help?</a>
             </div>
             <div id="about" style="float: right; padding-right: 5%; top:15%; position:relative;">
-                <a href="/about">About Crescendo</a>
+                <a href="/about" style = "text-decoration:none; color: #fff">About Crescendo</a>
             </div>
         </div>
     </body>

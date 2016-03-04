@@ -27,16 +27,22 @@ SOFTWARE.
 $(document).ready(function() {
 	initializeSoundPage();
     console.log("Initialized page");
-})
+});
 
 /*
  * Function that is called when the document is ready.
  */
 function initializeSoundPage() {
     $('#sound-test').click(soundTest);
-    $('#submitBtn').hide();
     $('#environment').submit(collectData);
     console.log("Applied click function");
+    var userAgent = window.navigator.userAgent;
+    if (userAgent.search("Chrome") > -1) {
+        if (location.protocol != "https:") {
+            console.log("Switching to https://");
+            location.protocol = "https:";
+        }
+    }
 }
 var audioContext = null;
 var meter = null;
@@ -53,9 +59,17 @@ var savedResultsTime = null;
 function collectData(e) {
     e.preventDefault();
     var savedResultsTime = window.performance.now();
-    var time = savedResultsTime - finishedTestTime;
+    var time = Math.round(savedResultsTime - finishedTestTime);
     console.log("Sending time: " + time);
-    ga('send', 'timing', 'Page layout timings', 'soundtest-to-save', time);
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Saved Soundtest Results',
+        eventAction: 'saved',
+        eventValue: time,
+        hitCallback: function() {
+            console.log("Submitting");
+            e.currentTarget.submit();
+        }});
 }
 function soundTest() {
     console.log("Clicked sound test button");
@@ -149,17 +163,20 @@ function shutdown() {
     testingSound = false;
     if (!canceled) {       
         var calculatedDecibels = calculateDecibels();
-        if (calculatedDecibels >= 50) {
-            $("#test-details").html("<i class='fa fa-headphones fa-5x' style='position:relative; left:170px'></i>"
-            +"<p>You should probably wear headphones or use a less sensitive microphone. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
-        } else {
-            $("#test-details").html("<img style='width:5em; vertical-align:top' src='https://cdn1.iconfinder.com/data/icons/computer-hardware-4/512/audio_speakers-2-512.png'/>"
-            +"<p>You should be fine with speakers. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
+        if (calculatedDecibels) {
+            if (calculatedDecibels >= 50) {
+                $("#test-details").html("<i class='fa fa-headphones fa-5x' style='position:relative; left:170px'></i>"
+                +"<p>You should probably wear headphones or use a less sensitive microphone. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
+            } else {
+                $("#test-details").html("<img style='width:5em; vertical-align:top' src='https://cdn1.iconfinder.com/data/icons/computer-hardware-4/512/audio_speakers-2-512.png'/>"
+                +"<p>You should be fine with speakers. Decibel Level: " + calculatedDecibels.toFixed(2) + "</p>");
+            }
+   
+            $("#test-result-div").show();
+            $("#submitBtn").show();
+            finishedTestTime = window.performance.now();
+            $.get('/soundtest/updateJSON/'+calculatedDecibels.toFixed(2));
         }
-        $("#test-result-div").show();
-        $("#submitBtn").show();
-        finishedTestTime = window.performance.now();
-        $.get('/soundtest/updateJSON/'+calculatedDecibels.toFixed(2));
     } else {
         window.clearTimeout(stopTest);
         canceled = false;
